@@ -41,13 +41,12 @@ export default function MobileMenu() {
     setMounted(true);
   }, []);
 
+  // Close menu on scroll
   useEffect(() => {
-    if (open) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-    return () => { document.body.style.overflow = ""; };
+    if (!open) return;
+    const handleScroll = () => setOpen(false);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [open]);
 
   return (
