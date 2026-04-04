@@ -5,8 +5,8 @@ const translations = {
 
     // Hero
     eyebrow: "Criticaldrop \u00d7 Wallector",
-    h1Line1: "We built a ChatGPT app for Wallector.",
-    h1Line2: "Users search the entire catalog just talking.",
+    h1Line1: "We built a ChatGPT app for Wallector",
+    h1Line2: "Users search the entire catalog just talking",
     subtext: "It\u2019s live. It works on real data. If you run a marketplace, this is what your users have been waiting for.",
     btnSeeItLive: "See it live",
     btnWhatItDoes: "What it does",
@@ -77,8 +77,8 @@ const translations = {
 
     // Hero
     eyebrow: "Criticaldrop \u00d7 Wallector",
-    h1Line1: "Abbiamo costruito un\u2019app ChatGPT per Wallector.",
-    h1Line2: "Gli utenti cercano l\u2019intero catalogo parlando.",
+    h1Line1: "Abbiamo costruito un\u2019app ChatGPT per Wallector",
+    h1Line2: "Gli utenti cercano l\u2019intero catalogo parlando",
     subtext: "\u00c8 live. Funziona su dati reali. Se gestisci un marketplace, \u00e8 quello che i tuoi utenti stavano aspettando.",
     btnSeeItLive: "Guarda dal vivo",
     btnWhatItDoes: "Cosa fa",
