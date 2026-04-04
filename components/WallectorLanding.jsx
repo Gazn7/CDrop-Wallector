@@ -51,7 +51,6 @@ export default function WallectorLanding() {
             <h1>{t.h1Line1}<br />{t.h1Line2}</h1>
             <p className="hero-subtext">{t.subtext}</p>
             <div className="hero-actions">
-              <a className="button button-primary" href="#how-it-works">{t.btnSeeItLive}</a>
               <a className="hero-nav-link" href="#product">{t.btnWhatItDoes}</a>
               <a className="hero-nav-link" href="#how-it-works">{t.btnHowItWorks}</a>
               <a className="button button-secondary" href="#contact">{t.btnGetInTouch}</a>

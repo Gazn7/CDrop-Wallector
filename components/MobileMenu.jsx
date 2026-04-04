@@ -10,6 +10,7 @@ function MenuOverlay({ open, onClose }) {
   const t = translations[lang];
 
   const links = [
+    { label: "Home", href: "#" },
     { label: t.productTitle, href: "#product" },
     { label: t.howTitle, href: "#how-it-works" },
     { label: t.contactTitle, href: "#contact" },
