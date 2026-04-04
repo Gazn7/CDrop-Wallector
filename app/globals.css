@@ -115,7 +115,7 @@ h3 {
   font-weight: 600;
   letter-spacing: 0.08em;
   color: var(--muted);
-  padding: 4px 2px;
+  padding: 8px 6px;
   transition: color 0.15s;
 }
 
@@ -221,6 +221,10 @@ h3 {
 .section-heading h2 {
   font-size: clamp(1.8rem, 3.5vw, 3rem);
   margin-bottom: 16px;
+}
+
+.hero-copy h1 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
 }
 
 .section-heading p,
@@ -425,12 +429,15 @@ h3 {
   overflow: hidden;
   border: 1px solid var(--line);
   background: var(--bg-surface);
+  max-height: 480px;
 }
 
 .video-wrapper video {
   display: block;
   width: 100%;
   height: auto;
+  max-height: 480px;
+  object-fit: cover;
 }
 
 /* Product features */
@@ -509,6 +516,7 @@ h3 {
   font-weight: 400;
   line-height: 1;
   flex-shrink: 0;
+  display: none; /* hidden on desktop */
 }
 
 .feature-card-body {
@@ -516,6 +524,7 @@ h3 {
   font-size: 0.9rem;
   line-height: 1.65;
   color: var(--muted-light);
+  display: block; /* always visible on desktop */
 }
 
 .feature-dot {
@@ -1017,6 +1026,21 @@ h3 {
 
   .feature-card p {
     font-size: 0.82rem;
+  }
+
+  /* Accordion on mobile */
+  .feature-card .feature-card-body,
+  .workflow-card .feature-card-body {
+    display: none;
+  }
+
+  .feature-card-open .feature-card-body,
+  .workflow-card-open .feature-card-body {
+    display: block;
+  }
+
+  .feature-card-chevron {
+    display: inline;
   }
 
   .workflow-grid {

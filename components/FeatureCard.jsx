@@ -17,7 +17,7 @@ export default function FeatureCard({ title, text }) {
           {open ? "−" : "+"}
         </span>
       </div>
-      {open && <p className="feature-card-body">{text}</p>}
+      <p className="feature-card-body">{text}</p>
     </article>
   );
 }
