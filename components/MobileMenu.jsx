@@ -1,15 +1,46 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 import { useLanguage } from "./LanguageContext";
 import translations from "./translations";
 
-export default function MobileMenu() {
-  const [open, setOpen] = useState(false);
+function MenuOverlay({ open, onClose }) {
   const { lang } = useLanguage();
   const t = translations[lang];
 
-  // Lock body scroll when menu is open
+  const links = [
+    { label: t.productTitle, href: "#product" },
+    { label: t.howTitle, href: "#how-it-works" },
+    { label: t.contactTitle, href: "#contact" },
+  ];
+
+  return (
+    <div className={`mobile-menu-overlay${open ? " mobile-menu-visible" : ""}`}>
+      <nav className="mobile-menu-nav">
+        {links.map((link) => (
+          <a
+            key={link.href}
+            href={link.href}
+            className="mobile-menu-link"
+            onClick={onClose}
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+    </div>
+  );
+}
+
+export default function MobileMenu() {
+  const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
@@ -18,12 +49,6 @@ export default function MobileMenu() {
     }
     return () => { document.body.style.overflow = ""; };
   }, [open]);
-
-  const links = [
-    { label: t.productTitle, href: "#product" },
-    { label: t.howTitle, href: "#how-it-works" },
-    { label: t.contactTitle, href: "#contact" },
-  ];
 
   return (
     <>
@@ -40,20 +65,10 @@ export default function MobileMenu() {
         </span>
       </button>
 
-      <div className={`mobile-menu-overlay${open ? " mobile-menu-visible" : ""}`}>
-        <nav className="mobile-menu-nav">
-          {links.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="mobile-menu-link"
-              onClick={() => setOpen(false)}
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-      </div>
+      {mounted && createPortal(
+        <MenuOverlay open={open} onClose={() => setOpen(false)} />,
+        document.body
+      )}
     </>
   );
 }
