@@ -57,7 +57,7 @@ export default function WallectorLanding() {
             <span className="eyebrow">Criticaldrop / Wallector</span>
             <h1>We built a ChatGPT app for Wallector. Users can search the entire catalog by talking to it.</h1>
             <p className="hero-subtext">
-              It&apos;s live. It works. If you run a marketplace, you can have the same thing.
+              It&apos;s live. It works on real catalog data. Built for marketplaces that want to stop losing users to bad search.
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href="#demo">See it live</a>
@@ -221,6 +221,7 @@ export default function WallectorLanding() {
           <p className="marketplace-intro-note">
             70% of the code is already written. What changes is your data model and your catalog.
             We need three things from you: a catalog export, an hour to understand your use cases, and five days.
+            Fixed-scope project. We quote before we start.
           </p>
         </div>
         <div className="marketplace-grid">
@@ -265,7 +266,7 @@ export default function WallectorLanding() {
           <div className="site-footer-block">
             <span className="footer-label">Project</span>
             <p>
-              Wallector is a project developed by Criticaldrop — a custom ChatGPT app and MCP integration
+              Wallector is a project developed by Criticaldrop — a custom ChatGPT app and AI connector
               for the art marketplace.
             </p>
           </div>

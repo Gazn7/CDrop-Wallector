@@ -1,6 +1,6 @@
 export const featureBadges = [
   "ChatGPT App",
-  "MCP Integration",
+  "AI Connector",
   "Visual Search",
   "Live on Wallector"
 ];
@@ -38,8 +38,8 @@ export const workflowSteps = [
     text: "CSV, API, any structured format. We connect to what you already have."
   },
   {
-    title: "2. We build the MCP",
-    text: "The layer that connects your catalog to ChatGPT. Handles search, retrieval, and response logic."
+    title: "2. We build the AI connector",
+    text: "The layer that connects your catalog to ChatGPT. Search logic, retrieval, response format, and visual queries. Production-ready, deployed on your infrastructure or ours."
   },
   {
     title: "3. Users search by talking",
@@ -67,7 +67,7 @@ export const marketplaceCards = [
   {
     number: "02",
     title: "What we build",
-    text: "MCP server, ChatGPT app, search and retrieval layer. Deployed on Cloud Run, production-ready."
+    text: "AI connector, ChatGPT app, search and retrieval layer. Deployed on Cloud Run, production-ready."
   },
   {
     number: "03",
@@ -82,8 +82,8 @@ export const closingDetails = [
     text: "A dedicated app connected to your catalog, published on the OpenAI marketplace."
   },
   {
-    title: "Custom MCP",
-    text: "The server that connects your data to any LLM. Reusable, maintainable, yours."
+    title: "AI Connector",
+    text: "The layer that connects your data to any LLM. Reusable, maintainable, yours."
   },
   {
     title: "Visual search",
