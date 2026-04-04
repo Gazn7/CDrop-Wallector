@@ -11,8 +11,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-        <script dangerouslySetInnerHTML={{ __html: `if('scrollRestoration'in history)history.scrollRestoration='manual';` }} />
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+        <script dangerouslySetInnerHTML={{ __html: `if('scrollRestoration'in history)history.scrollRestoration='manual';var v=document.querySelector('meta[name=viewport]');if(v){v.content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no';}` }} />
       </head>
       <body>
         <LanguageProvider>{children}</LanguageProvider>
