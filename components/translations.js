@@ -42,10 +42,10 @@ const translations = {
 
     // Workflow steps
     steps: [
-      { title: "1. Your catalog", text: "Any database, API, or structured format. We connect to what you already have." },
-      { title: "2. We build the AI connector", text: "We connect your catalog to ChatGPT. Search, retrieval, and response logic. Production ready." },
-      { title: "3. Users search by talking", text: "No training, no new interface to learn. If they can type, they can use it." },
-      { title: "4. The system understands the user", text: "Semantic search, not keyword matching. Text or image, it gets what users mean." },
+      { title: "1. It connects to your catalog", text: "Any database, API, or structured format. No migration, no restructuring. It works with what you already have." },
+      { title: "2. It becomes a ChatGPT app", text: "Your catalog gets its own app on ChatGPT. Published, branded, yours." },
+      { title: "3. Your users just talk", text: "They describe what they want. The app searches your real catalog and answers. Nothing to learn, nothing to install." },
+      { title: "4. It understands, not just matches", text: "Semantic search, not keywords. Text or image, it gets what they actually mean." },
     ],
 
     // Contact
@@ -114,10 +114,10 @@ const translations = {
 
     // Workflow steps
     steps: [
-      { title: "1. Il tuo catalogo", text: "Qualsiasi database, API o formato strutturato. Ci colleghiamo a quello che hai gi\u00e0." },
-      { title: "2. Costruiamo il connettore AI", text: "Colleghiamo il tuo catalogo a ChatGPT. Ricerca, recupero e logica di risposta. Pronto per la produzione." },
-      { title: "3. Gli utenti cercano parlando", text: "Nessuna formazione, nessuna nuova interfaccia da imparare. Se sanno scrivere, sanno usarlo." },
-      { title: "4. Il sistema capisce l\u2019utente", text: "Ricerca semantica, non per parole chiave. Testo o immagine, capisce cosa intendono gli utenti." },
+      { title: "1. Si collega al tuo catalogo", text: "Qualsiasi database, API o formato strutturato. Nessuna migrazione, nessuna ristrutturazione. Funziona con quello che hai gi\u00e0." },
+      { title: "2. Diventa un\u2019app ChatGPT", text: "Il tuo catalogo ottiene la sua app su ChatGPT. Pubblicata, brandizzata, tua." },
+      { title: "3. I tuoi utenti parlano e basta", text: "Descrivono quello che vogliono. L\u2019app cerca nel tuo catalogo reale e risponde. Niente da imparare, niente da installare." },
+      { title: "4. Capisce, non cerca solo parole", text: "Ricerca semantica, non per keyword. Testo o immagine, capisce cosa intendono davvero." },
     ],
 
     // Contact
