@@ -8,13 +8,15 @@ export function LanguageProvider({ children }) {
   const [lang, setLangState] = useState("en");
 
   useEffect(() => {
-    const stored = localStorage.getItem("lang");
-    if (stored === "it" || stored === "en") setLangState(stored);
+    try {
+      const stored = localStorage.getItem("lang");
+      if (stored === "it" || stored === "en") setLangState(stored);
+    } catch (_) {}
   }, []);
 
   const setLang = (l) => {
     setLangState(l);
-    localStorage.setItem("lang", l);
+    try { localStorage.setItem("lang", l); } catch (_) {}
   };
 
   return (

@@ -842,10 +842,6 @@ h3 {
     position: relative;
   }
 
-  .site-brand-logo {
-    display: none;
-  }
-
   .site-brand {
     max-width: calc(100% - 90px);
   }
