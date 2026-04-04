@@ -39,15 +39,15 @@ export const workflowSteps = [
   },
   {
     title: "2. We build the AI connector",
-    text: "The layer that connects your catalog to ChatGPT. Handles search, retrieval, and response logic. Production-ready."
+    text: "We connect your catalog to ChatGPT. Search, retrieval, and response logic — production-ready."
   },
   {
     title: "3. Users search by talking",
     text: "No training, no new UI to learn. If they can type, they can use it."
   },
   {
-    title: "4. Images work too",
-    text: "Not keyword matching. Semantic understanding, image similarity, and concept search. The system gets what users mean."
+    title: "4. The system understands the user",
+    text: "Semantic search, not keyword matching. Text or image — it gets what users mean."
   }
 ];
 
