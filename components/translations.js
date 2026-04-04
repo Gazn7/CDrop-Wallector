@@ -56,9 +56,9 @@ const translations = {
     // Closing details
     closingDetails: [
       { title: "ChatGPT App", text: "A dedicated app connected to your catalog, published on the OpenAI marketplace." },
-      { title: "AI Connector", text: "The layer that connects your data to any LLM. Reusable, maintainable, yours." },
+      { title: "Multi LLM compatibility", text: "The layer that connects your data to any LLM. Reusable, maintainable, yours." },
       { title: "Visual search", text: "Image queries built into the same product. No separate integration needed." },
-      { title: "Ongoing support", text: "We don\u2019t disappear after you launch. Updates, tuning, and iteration as you grow." },
+      { title: "Ongoing support", text: "We don\u2019t disappear after launch. Continuous support as you grow." },
     ],
 
     // Footer
@@ -128,9 +128,9 @@ const translations = {
     // Closing details
     closingDetails: [
       { title: "App ChatGPT", text: "Un\u2019app dedicata collegata al tuo catalogo, pubblicata sull\u2019OpenAI marketplace." },
-      { title: "Connettore AI", text: "Il layer che connette i tuoi dati a qualsiasi LLM. Riutilizzabile, manutenibile, tuo." },
+      { title: "Compatibilit\u00e0 multi LLM", text: "Il layer che connette i tuoi dati a qualsiasi LLM. Riutilizzabile, manutenibile, tuo." },
       { title: "Ricerca visiva", text: "Query per immagine integrata nello stesso prodotto. Nessuna integrazione separata." },
-      { title: "Supporto continuo", text: "Non spariremo dopo il lancio. Aggiornamenti, ottimizzazioni e iterazioni mentre cresci." },
+      { title: "Supporto continuo", text: "Non spariremo dopo il lancio. Supporto continuo mentre cresci." },
     ],
 
     // Footer
