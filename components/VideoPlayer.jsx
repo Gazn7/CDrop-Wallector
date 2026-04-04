@@ -6,6 +6,7 @@ export default function VideoPlayer({ src }) {
       controls
       preload="metadata"
       playsInline
+      poster="/images/widget-1.jpg"
       onLoadedMetadata={(e) => { e.target.playbackRate = 1.5; }}
       style={{ display: "block", width: "100%", height: "auto" }}
     >
