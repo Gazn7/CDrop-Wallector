@@ -120,8 +120,8 @@ export default function WallectorLanding() {
             <h2>{t.contactTitle}</h2>
             <p>{t.contactDesc}</p>
             <div className="hero-actions">
-              <a className="button button-primary" href="mailto:hello@criticaldrop.com">
-                hello@criticaldrop.com
+              <a className="button button-primary" href="mailto:info@criticaldrop.com">
+                info@criticaldrop.com
               </a>
             </div>
           </div>
@@ -150,7 +150,7 @@ export default function WallectorLanding() {
           </div>
           <div className="site-footer-block">
             <span className="footer-label">{t.footerContactsLabel}</span>
-            <a href="mailto:hello@criticaldrop.com">hello@criticaldrop.com</a>
+            <a href="mailto:info@criticaldrop.com">info@criticaldrop.com</a>
           </div>
         </div>
       </footer>
