@@ -35,11 +35,11 @@ export const platformFeatures = [
 export const workflowSteps = [
   {
     title: "1. Your catalog",
-    text: "CSV, API, any structured format. We connect to what you already have."
+    text: "Any database, API, or structured format. We connect to what you already have."
   },
   {
     title: "2. We build the AI connector",
-    text: "The layer that connects your catalog to ChatGPT. Search logic, retrieval, response format, and visual queries. Production-ready, deployed on your infrastructure or ours."
+    text: "The layer that connects your catalog to ChatGPT. Handles search, retrieval, and response logic. Production-ready."
   },
   {
     title: "3. Users search by talking",
@@ -47,7 +47,7 @@ export const workflowSteps = [
   },
   {
     title: "4. Images work too",
-    text: "Visual search, similarity matching, subject classification. Not just text queries."
+    text: "Not keyword matching. Semantic understanding, image similarity, and concept search. The system gets what users mean."
   }
 ];
 
