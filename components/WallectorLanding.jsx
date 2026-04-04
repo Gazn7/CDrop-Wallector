@@ -43,7 +43,7 @@ export default function WallectorLanding() {
       <Section tone="hero">
         <div className="hero-panel">
           <div className="hero-copy">
-            <span className="eyebrow">Criticaldrop / Wallector</span>
+            <span className="eyebrow">Criticaldrop &times; Wallector</span>
             <h1>We built a ChatGPT app for Wallector. Users search the entire catalog by talking to it.</h1>
             <p className="hero-subtext">
               It&apos;s live. It works on real data. If you run a marketplace, this is what your users have been waiting for.
