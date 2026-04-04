@@ -367,7 +367,7 @@ h3 {
 
 .howit-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.4fr 1fr;
   gap: 32px;
   align-items: start;
 }
@@ -485,8 +485,31 @@ h3 {
 }
 
 .workflow-card {
+  position: relative;
   background: var(--bg-surface);
   padding: 28px 24px;
+  transition: background 200ms ease;
+}
+
+.workflow-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: var(--accent);
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 220ms ease;
+}
+
+.workflow-card:hover::before {
+  transform: scaleY(1);
+}
+
+.workflow-card:hover {
+  background: var(--bg-surface-2);
 }
 
 .workflow-card h3 {

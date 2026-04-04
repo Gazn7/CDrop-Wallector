@@ -100,7 +100,7 @@ export default function WallectorLanding() {
         id="product"
         tone="highlight"
         eyebrow="Product overview"
-        title="What it does."
+        title="Product overview."
         description="Users open ChatGPT, describe what they're looking for, and get results from the actual catalog. No filters, no navigation, no friction."
       >
         <div className="product-showcase">
