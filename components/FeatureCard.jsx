@@ -7,6 +7,8 @@ export default function FeatureCard({ title, text }) {
 
   return (
     <article
+      role="button"
+      tabIndex={0}
       className={`feature-card feature-card-toggle${open ? " feature-card-open" : ""}`}
       onClick={() => setOpen((v) => !v)}
     >

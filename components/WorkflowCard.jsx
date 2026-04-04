@@ -7,6 +7,8 @@ export default function WorkflowCard({ title, text }) {
 
   return (
     <article
+      role="button"
+      tabIndex={0}
       className={`workflow-card workflow-card-toggle${open ? " workflow-card-open" : ""}`}
       onClick={() => setOpen((v) => !v)}
     >
