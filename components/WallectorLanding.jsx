@@ -2,21 +2,12 @@ import Image from "next/image";
 import Section from "./Section";
 import VideoPlayer from "./VideoPlayer";
 import Lightbox from "./Lightbox";
+import FeatureCard from "./FeatureCard";
 import {
   platformFeatures,
   workflowSteps,
   closingDetails
 } from "./data";
-
-function FeatureCard({ title, text }) {
-  return (
-    <article className="feature-card">
-      <span className="feature-dot" aria-hidden="true" />
-      <h3>{title}</h3>
-      <p>{text}</p>
-    </article>
-  );
-}
 
 export default function WallectorLanding() {
   return (
@@ -26,7 +17,7 @@ export default function WallectorLanding() {
         <div className="site-header-inner">
           <a className="site-brand" href="/wallector">
             <span className="site-brand-main">Criticaldrop</span>
-            <span className="site-brand-divider">/</span>
+            <span className="site-brand-divider">&times;</span>
             <Image
               src="/images/wallector-logo.svg"
               alt="Wallector"
