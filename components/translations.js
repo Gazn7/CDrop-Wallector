@@ -27,12 +27,12 @@ const translations = {
 
     // Feature cards
     features: [
-      { title: "Ask, don\u2019t filter", text: "Type like you talk. Get real results. No menus, no dropdowns, no dead ends." },
-      { title: "It understands what you mean", text: "Vague queries work. Incomplete ones too. The system reads intent, not just keywords." },
-      { title: "Your data, your rules", text: "The catalog stays yours. We add the layer that makes it conversational. Nothing underneath changes." },
-      { title: "Grouped when it makes sense", text: "Ask for an artist and get a grouped view. Ask for one piece and get exactly that." },
-      { title: "Multi-seller ready", text: "Distributed inventory, consistent results. Multiple sellers, one coherent experience." },
-      { title: "Search by image", text: "Upload an image. Get similar works. The picture is the query." },
+      { title: "Ask, don\u2019t filter", text: "Your users type what they want, the way they\u2019d say it. The app finds it. No menus, no dropdowns, no dead ends." },
+      { title: "It understands what you mean", text: "Vague queries work. Incomplete ones too. It reads intent, not just keywords." },
+      { title: "Your data, your rules", text: "Your catalog stays yours. The app adds a conversational layer on top. Nothing underneath changes." },
+      { title: "It remembers the conversation", text: "\u201cShow me something similar but cheaper.\u201d That works. Every message builds on the last. No search engine can do that." },
+      { title: "Multi seller ready", text: "One app, many sellers. It searches across distributed inventory and delivers one consistent experience." },
+      { title: "Search by image", text: "Upload a photo. The app finds similar works. No keywords needed. The picture is the query." },
     ],
 
     // How it works
@@ -99,12 +99,12 @@ const translations = {
 
     // Feature cards
     features: [
-      { title: "Cerca, non filtrare", text: "Scrivi come parli. Ottieni risultati reali. Niente menu, niente dropdown, niente vicoli ciechi." },
-      { title: "Capisce cosa intendi", text: "Le query vaghe funzionano. Anche quelle incomplete. Il sistema legge l\u2019intenzione, non solo le parole." },
-      { title: "I tuoi dati, le tue regole", text: "Il catalogo rimane tuo. Aggiungiamo il layer che lo rende conversazionale. Niente cambia sotto." },
-      { title: "Raggruppato quando ha senso", text: "Chiedi di un artista e ottieni una vista raggruppata. Chiedi un\u2019opera e ottieni esattamente quella." },
-      { title: "Pronto per pi\u00f9 venditori", text: "Inventario distribuito, risultati coerenti. Pi\u00f9 venditori, un\u2019esperienza unica." },
-      { title: "Cerca per immagine", text: "Carica un\u2019immagine. Trova opere simili. La foto \u00e8 la query." },
+      { title: "Cerca, non filtrare", text: "I tuoi utenti scrivono quello che vogliono, come lo direbbero a voce. L\u2019app lo trova. Niente menu, niente dropdown, niente vicoli ciechi." },
+      { title: "Capisce cosa intendi", text: "Le query vaghe funzionano. Anche quelle incomplete. Legge l\u2019intenzione, non solo le parole." },
+      { title: "I tuoi dati, le tue regole", text: "Il tuo catalogo resta tuo. L\u2019app aggiunge un layer conversazionale sopra. Niente cambia sotto." },
+      { title: "Ricorda la conversazione", text: "\u201cFammi vedere qualcosa di simile ma meno caro.\u201d Funziona. Ogni messaggio costruisce sul precedente. Nessun motore di ricerca pu\u00f2 farlo." },
+      { title: "Pronto per pi\u00f9 venditori", text: "Un\u2019app, tanti venditori. Cerca nell\u2019inventario distribuito e restituisce un\u2019esperienza unica e coerente." },
+      { title: "Cerca per immagine", text: "Carica una foto. L\u2019app trova opere simili. Niente parole chiave. La foto \u00e8 la query." },
     ],
 
     // How it works
