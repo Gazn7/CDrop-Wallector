@@ -8,6 +8,7 @@ import FeatureCard from "./FeatureCard";
 import WorkflowCard from "./WorkflowCard";
 import ClosingDetailCard from "./ClosingDetailCard";
 import LanguageToggle from "./LanguageToggle";
+import MobileMenu from "./MobileMenu";
 import { useState } from "react";
 import { useLanguage } from "./LanguageContext";
 import translations from "./translations";
@@ -35,7 +36,10 @@ export default function WallectorLanding() {
               className="site-brand-logo"
             />
           </a>
-          <LanguageToggle />
+          <div className="header-actions">
+            <LanguageToggle />
+            <MobileMenu />
+          </div>
         </div>
       </header>
 
