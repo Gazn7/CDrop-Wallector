@@ -3,6 +3,7 @@ import Section from "./Section";
 import VideoPlayer from "./VideoPlayer";
 import Lightbox from "./Lightbox";
 import FeatureCard from "./FeatureCard";
+import WorkflowCard from "./WorkflowCard";
 import {
   platformFeatures,
   workflowSteps,
@@ -81,17 +82,17 @@ export default function WallectorLanding() {
           </div>
           <div className="proof-item">
             <span className="proof-dot" />
-            3 to 5 days to ship
+            Less than one month to ship
           </div>
         </div>
       </div>
 
-      {/* What it does */}
+      {/* Product overview */}
       <Section
         id="product"
         tone="highlight"
         eyebrow="Product overview"
-        title="Product overview."
+        title="Product overview"
         description="Users open ChatGPT. They describe what they want. They get results from the real catalog. No filters. No navigation. No friction."
       >
         <div className="product-showcase">
@@ -114,11 +115,11 @@ export default function WallectorLanding() {
         </div>
       </Section>
 
-      {/* How it works — video + workflow side by side */}
+      {/* How it works */}
       <Section
         id="how-it-works"
         eyebrow="How it works"
-        title="How it works."
+        title="How it works"
         description="Four steps. No magic, just good engineering."
       >
         <div className="video-wrapper">
@@ -126,10 +127,7 @@ export default function WallectorLanding() {
         </div>
         <div className="workflow-grid-2col howit-below">
           {workflowSteps.map((step) => (
-            <article key={step.title} className="workflow-card">
-              <h3>{step.title}</h3>
-              <p>{step.text}</p>
-            </article>
+            <WorkflowCard key={step.title} {...step} />
           ))}
         </div>
       </Section>
@@ -138,7 +136,7 @@ export default function WallectorLanding() {
       <Section id="contact" eyebrow="Contact" tone="highlight">
         <div className="closing-panel">
           <div className="closing-copy">
-            <h2>Let&apos;s talk.</h2>
+            <h2>Let&apos;s talk</h2>
             <p>
               If you run a marketplace and want to know if this is right for you, reach out.
               No deck. No sales call. Just a real conversation.

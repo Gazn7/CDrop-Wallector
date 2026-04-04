@@ -547,6 +547,11 @@ h3 {
   background: var(--bg-surface-2);
 }
 
+.workflow-card-toggle {
+  cursor: pointer;
+  user-select: none;
+}
+
 .workflow-card h3 {
   font-size: 0.8rem;
   font-weight: 600;
