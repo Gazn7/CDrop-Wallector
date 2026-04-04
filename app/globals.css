@@ -374,8 +374,8 @@ h3 {
 }
 
 .button-secondary:hover {
-  color: var(--text);
-  border-color: rgba(255, 255, 255, 0.18);
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 /* Hero */
@@ -421,8 +421,8 @@ h3 {
 }
 
 .hero-nav-link:hover {
-  color: var(--text);
-  border-color: rgba(255, 255, 255, 0.22);
+  color: var(--accent);
+  border-color: var(--accent);
 }
 
 /* Hero visual */

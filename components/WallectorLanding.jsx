@@ -78,14 +78,6 @@ export default function WallectorLanding() {
         </div>
       </Section>
 
-      {/* Proof bar */}
-      <div className="proof-bar">
-        <div className="proof-bar-inner">
-          <div className="proof-item"><span className="proof-dot" />{t.proof1}</div>
-          <div className="proof-item"><span className="proof-dot" />{t.proof2}</div>
-          <div className="proof-item"><span className="proof-dot" />{t.proof3}</div>
-        </div>
-      </div>
 
       {/* Product overview */}
       <Section id="product" tone="highlight" eyebrow={t.productEyebrow} title={t.productTitle} description={t.productDesc}>
