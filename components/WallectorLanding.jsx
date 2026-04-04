@@ -130,18 +130,16 @@ export default function WallectorLanding() {
         title="How it works."
         description="Four steps. No magic, just good engineering."
       >
-        <div className="howit-grid">
-          <div className="video-wrapper">
-            <VideoPlayer src="/video/demo.mp4" />
-          </div>
-          <div className="workflow-grid-2col">
-            {workflowSteps.map((step) => (
-              <article key={step.title} className="workflow-card">
-                <h3>{step.title}</h3>
-                <p>{step.text}</p>
-              </article>
-            ))}
-          </div>
+        <div className="video-wrapper">
+          <VideoPlayer src="/video/demo.mp4" />
+        </div>
+        <div className="workflow-grid-2col howit-below">
+          {workflowSteps.map((step) => (
+            <article key={step.title} className="workflow-card">
+              <h3>{step.title}</h3>
+              <p>{step.text}</p>
+            </article>
+          ))}
         </div>
       </Section>
 

@@ -382,6 +382,10 @@ h3 {
   overflow: hidden;
 }
 
+.howit-below {
+  margin-top: 24px;
+}
+
 .video-wrapper {
   position: relative;
   border-radius: var(--radius-xl);
