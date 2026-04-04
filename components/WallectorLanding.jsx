@@ -9,6 +9,7 @@ import WorkflowCard from "./WorkflowCard";
 import ClosingDetailCard from "./ClosingDetailCard";
 import LanguageToggle from "./LanguageToggle";
 import MobileMenu from "./MobileMenu";
+import ScrollReveal from "./ScrollReveal";
 import { useState } from "react";
 import { useLanguage } from "./LanguageContext";
 import translations from "./translations";
@@ -82,59 +83,70 @@ export default function WallectorLanding() {
       {/* Product overview */}
       <Section id="product" tone="highlight" eyebrow={t.productEyebrow} title={t.productTitle} description={t.productDesc}>
         <div className="product-showcase">
-          <Lightbox>
-            <div className="product-shot">
-              <Image
-                src="/images/widget-2.jpg"
-                alt="Wallector product interface"
-                width={1056}
-                height={768}
-                className="product-image"
-              />
+          <ScrollReveal animation="zoom">
+            <Lightbox>
+              <div className="product-shot">
+                <Image
+                  src="/images/widget-2.jpg"
+                  alt="Wallector product interface"
+                  width={1056}
+                  height={768}
+                  className="product-image"
+                />
+              </div>
+            </Lightbox>
+          </ScrollReveal>
+          <ScrollReveal animation="reveal" delay={150}>
+            <div className="feature-grid">
+              {t.features.map((feature) => (
+                <FeatureCard
+                  key={feature.title}
+                  {...feature}
+                  isOpen={activeFeature === feature.title}
+                  onToggle={() => setActiveFeature(v => v === feature.title ? null : feature.title)}
+                />
+              ))}
             </div>
-          </Lightbox>
-          <div className="feature-grid">
-            {t.features.map((feature) => (
-              <FeatureCard
-                key={feature.title}
-                {...feature}
-                isOpen={activeFeature === feature.title}
-                onToggle={() => setActiveFeature(v => v === feature.title ? null : feature.title)}
-              />
-            ))}
-          </div>
+          </ScrollReveal>
         </div>
       </Section>
 
       {/* How it works */}
       <Section id="how-it-works" eyebrow={t.howEyebrow} title={t.howTitle} description={t.howDesc}>
-        <div className="video-wrapper">
-          <VideoPlayer src="/video/demo.mp4" />
-        </div>
-        <div className="workflow-grid-2col howit-below">
-          {t.steps.map((step) => (
-            <WorkflowCard
-              key={step.title}
-              {...step}
-              isOpen={activeWorkflow === step.title}
-              onToggle={() => setActiveWorkflow(v => v === step.title ? null : step.title)}
-            />
-          ))}
-        </div>
+        <ScrollReveal animation="zoom">
+          <div className="video-wrapper">
+            <VideoPlayer src="/video/demo.mp4" />
+          </div>
+        </ScrollReveal>
+        <ScrollReveal animation="reveal" delay={100}>
+          <div className="workflow-grid-2col howit-below">
+            {t.steps.map((step) => (
+              <WorkflowCard
+                key={step.title}
+                {...step}
+                isOpen={activeWorkflow === step.title}
+                onToggle={() => setActiveWorkflow(v => v === step.title ? null : step.title)}
+              />
+            ))}
+          </div>
+        </ScrollReveal>
       </Section>
 
       {/* Contact */}
       <Section id="contact" eyebrow={t.contactEyebrow} tone="highlight">
         <div className="closing-panel">
-          <div className="closing-copy">
-            <h2>{t.contactTitle}</h2>
-            <p>{t.contactDesc}</p>
-            <div className="hero-actions">
-              <a className="button button-primary" href="mailto:info@criticaldrop.com">
-                info@criticaldrop.com
-              </a>
+          <ScrollReveal animation="reveal">
+            <div className="closing-copy">
+              <h2>{t.contactTitle}</h2>
+              <p>{t.contactDesc}</p>
+              <div className="hero-actions">
+                <a className="button button-primary" href="mailto:info@criticaldrop.com">
+                  info@criticaldrop.com
+                </a>
+              </div>
             </div>
-          </div>
+          </ScrollReveal>
+          <ScrollReveal animation="reveal" delay={150}>
           <div className="closing-detail">
             {t.closingDetails.map((item) => (
               <ClosingDetailCard
@@ -146,6 +158,7 @@ export default function WallectorLanding() {
               />
             ))}
           </div>
+          </ScrollReveal>
         </div>
       </Section>
 

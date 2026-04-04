@@ -1,3 +1,5 @@
+import ScrollReveal from "./ScrollReveal";
+
 export default function Section({
   id,
   eyebrow,
@@ -10,11 +12,13 @@ export default function Section({
     <section id={id} className={`section section-${tone}`}>
       <div className="section-inner">
         {(eyebrow || title || description) && (
-          <div className="section-heading">
-            {eyebrow ? <span className="eyebrow">{eyebrow}</span> : null}
-            {title ? <h2>{title}</h2> : null}
-            {description ? <p>{description}</p> : null}
-          </div>
+          <ScrollReveal animation="reveal">
+            <div className="section-heading">
+              {eyebrow ? <span className="eyebrow">{eyebrow}</span> : null}
+              {title ? <h2>{title}</h2> : null}
+              {description ? <p>{description}</p> : null}
+            </div>
+          </ScrollReveal>
         )}
         {children}
       </div>

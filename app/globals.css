@@ -964,6 +964,43 @@ h3 {
   cursor: default;
 }
 
+/* Scroll reveal animations */
+
+.sr {
+  will-change: transform, opacity;
+}
+
+.sr-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+.sr-reveal.sr-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.sr-zoom {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 700ms ease, transform 700ms ease;
+}
+
+.sr-zoom.sr-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.sr-fade {
+  opacity: 0;
+  transition: opacity 600ms ease;
+}
+
+.sr-fade.sr-visible {
+  opacity: 1;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
