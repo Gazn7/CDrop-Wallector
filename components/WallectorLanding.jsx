@@ -3,22 +3,10 @@ import Section from "./Section";
 import VideoPlayer from "./VideoPlayer";
 import Lightbox from "./Lightbox";
 import {
-  featureBadges,
   platformFeatures,
-  visualUseCases,
   workflowSteps,
-  marketplaceCards,
   closingDetails
 } from "./data";
-
-const examplePrompts = [
-  "Show me horse artworks under 2,000 EUR.",
-  "Find signed prints from the 1930s with strong black and white contrast.",
-  "Look for portraits similar to this image and group them by artist.",
-  "Which works by Rembrandt are available right now?",
-  "Show original prints with female subjects from European sellers.",
-  "Find works related to animals and highlight the best-priced options."
-];
 
 function FeatureCard({ title, text }) {
   return (
@@ -61,8 +49,8 @@ export default function WallectorLanding() {
               It&apos;s live. It works on real catalog data. Built for marketplaces that want to stop losing users to bad search.
             </p>
             <div className="hero-actions">
-              <a className="button button-primary" href="#demo">See it live</a>
-              <a className="hero-nav-link" href="#product">Product overview</a>
+              <a className="button button-primary" href="#how-it-works">See it live</a>
+              <a className="hero-nav-link" href="#product">What it does</a>
               <a className="hero-nav-link" href="#how-it-works">How it works</a>
               <a className="button button-secondary" href="#contact">Get in touch</a>
             </div>
@@ -107,22 +95,12 @@ export default function WallectorLanding() {
         </div>
       </div>
 
-      {/* Video */}
-      <Section id="demo" eyebrow="See it in action" title="Here's what it looks like.">
-        <p style={{ maxWidth: "560px", color: "var(--muted-light)", lineHeight: "1.75", marginBottom: "32px", fontSize: "1rem" }}>
-          Real session, real data, real catalog. No staging environment.
-        </p>
-        <div className="video-wrapper">
-          <VideoPlayer src="/video/demo.mp4" />
-        </div>
-      </Section>
-
-      {/* Product overview */}
+      {/* What it does */}
       <Section
         id="product"
         tone="highlight"
         eyebrow="Product overview"
-        title="What the product does."
+        title="What it does."
         description="Users open ChatGPT, describe what they're looking for, and get results from the actual catalog. No filters, no navigation, no friction."
       >
         <div className="product-showcase">
@@ -145,101 +123,30 @@ export default function WallectorLanding() {
         </div>
       </Section>
 
-      {/* How it works */}
+      {/* How it works — video + workflow side by side */}
       <Section
         id="how-it-works"
         eyebrow="How it works"
         title="How it works."
         description="Four steps. No magic, just good engineering."
       >
-        <div className="workflow-grid">
-          {workflowSteps.map((step) => (
-            <article key={step.title} className="workflow-card">
-              <h3>{step.title}</h3>
-              <p>{step.text}</p>
-            </article>
-          ))}
-        </div>
-      </Section>
-
-      {/* Visual AI + Prompts */}
-      <Section
-        tone="highlight"
-        title="Visual AI is part of the product."
-        description="Images are not decoration. In Wallector they work as search input, similarity signal, and metadata support."
-      >
-        <div className="visual-lead">
-          <div className="visual-panel">
-            <span className="stage-label">Image Intelligence</span>
-            <div className="stage-photo-frame">
-              <Image
-                src="/images/widget-3.jpg"
-                alt="Wallector image search in ChatGPT"
-                width={657}
-                height={940}
-                className="stage-photo"
-              />
-            </div>
+        <div className="howit-grid">
+          <div className="video-wrapper">
+            <VideoPlayer src="/video/demo.mp4" />
           </div>
-          <div className="visual-copy">
-            <div className="stage-chip-group">
-              <div className="stage-chip">Search by image</div>
-              <div className="stage-chip">Similarity</div>
-              <div className="stage-chip">Classification</div>
-              <div className="stage-chip">Metadata support</div>
-            </div>
-            {visualUseCases.map((item) => (
-              <div key={item} className="visual-list-item">
-                <span className="visual-marker" aria-hidden="true" />
-                <p>{item}</p>
-              </div>
+          <div className="workflow-grid-2col">
+            {workflowSteps.map((step) => (
+              <article key={step.title} className="workflow-card">
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+              </article>
             ))}
           </div>
-        </div>
-
-        <div className="prompt-panel">
-          <div className="prompt-heading">
-            <span className="eyebrow">Real queries</span>
-            <h3>These aren&apos;t hand-picked demos. They&apos;re the kind of thing users actually type.</h3>
-          </div>
-          <div className="prompt-grid">
-            {examplePrompts.map((prompt) => (
-              <div key={prompt} className="prompt-card">
-                <span className="prompt-label">Prompt</span>
-                <p>{prompt}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* Built for any marketplace */}
-      <Section
-        tone="dark"
-        eyebrow="Ready to deploy"
-        title="We built this for Wallector. We can build it for you."
-      >
-        <div className="marketplace-intro">
-          <div />
-          <p className="marketplace-intro-note">
-            70% of the code is already written. What changes is your data model and your catalog.
-            We need three things from you: a catalog export, an hour to understand your use cases, and five days.
-            Fixed-scope project. We quote before we start.
-          </p>
-        </div>
-        <div className="marketplace-grid">
-          {marketplaceCards.map((card) => (
-            <div key={card.number} className="marketplace-card">
-              <div className="marketplace-card-number">{card.number}</div>
-              <h3>{card.title}</h3>
-              <p>{card.text}</p>
-            </div>
-          ))}
         </div>
       </Section>
 
       {/* Contact */}
-      <Section id="contact" eyebrow="Contact">
+      <Section id="contact" eyebrow="Contact" tone="highlight">
         <div className="closing-panel">
           <div className="closing-copy">
             <h2>Let&apos;s talk.</h2>
@@ -269,16 +176,15 @@ export default function WallectorLanding() {
           <div className="site-footer-block">
             <span className="footer-label">Project</span>
             <p>
-              Wallector is a project developed by Criticaldrop — a custom ChatGPT app and AI connector
+              Wallector is a project developed by Criticaldrop — a custom ChatGPT app and MCP integration
               for the art marketplace.
             </p>
           </div>
           <div className="site-footer-block">
             <span className="footer-label">Navigation</span>
-            <a href="#product">Product overview</a>
+            <a href="#product">What it does</a>
             <a href="#how-it-works">How it works</a>
-            <a href="#demo">Demo</a>
-            <a href="#contact">Contact</a>
+            <a href="#contact">Get in touch</a>
           </div>
           <div className="site-footer-block">
             <span className="footer-label">Contacts</span>
