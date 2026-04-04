@@ -24,6 +24,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -109,10 +110,9 @@ h3 {
   gap: 8px;
 }
 
-/* Mobile menu button */
+/* Menu button */
 
 .mobile-menu-btn {
-  display: none;
   appearance: none;
   -webkit-appearance: none;
   border: none;
@@ -121,6 +121,7 @@ h3 {
   padding: 8px;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
+  flex-shrink: 0;
 }
 
 .hamburger {
@@ -152,17 +153,17 @@ h3 {
   transform: translateY(-6.5px) rotate(-45deg);
 }
 
-/* Mobile menu overlay */
+/* Menu overlay */
 
 .mobile-menu-overlay {
   position: fixed;
   inset: 0;
-  top: 60px;
+  top: 72px;
   z-index: 19;
   background: var(--bg);
   display: flex;
   flex-direction: column;
-  padding: 48px 32px;
+  padding: 40px 32px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 250ms ease;
@@ -176,20 +177,27 @@ h3 {
 .mobile-menu-nav {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 4px;
+  max-width: var(--container);
 }
 
 .mobile-menu-link {
-  font-size: 1.8rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: var(--text);
   text-decoration: none;
-  padding: 8px 0;
-  transition: color 200ms ease;
+  padding: 14px 16px;
+  border-radius: var(--radius-md);
+  transition: color 200ms ease, background 200ms ease;
+}
+
+.mobile-menu-link:hover {
+  background: var(--bg-surface);
 }
 
 .mobile-menu-link:active {
   color: var(--accent);
+  background: var(--bg-surface-2);
 }
 
 .lang-toggle {
@@ -986,8 +994,8 @@ h3 {
     display: none;
   }
 
-  .mobile-menu-btn {
-    display: block;
+  .mobile-menu-overlay {
+    top: 60px;
   }
 
   .feature-grid,
