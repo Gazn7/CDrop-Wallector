@@ -1,20 +1,16 @@
 "use client";
 
-import { useState } from "react";
-
-export default function ClosingDetailCard({ title, text }) {
-  const [open, setOpen] = useState(false);
-
+export default function ClosingDetailCard({ title, text, isOpen, onToggle }) {
   return (
-    <div className={`closing-detail-item closing-detail-card${open ? " closing-detail-card-open" : ""}`}>
+    <div className={`closing-detail-item closing-detail-card${isOpen ? " closing-detail-card-open" : ""}`}>
       <button
         type="button"
         className="closing-detail-toggle"
-        onClick={() => setOpen((v) => !v)}
+        onClick={onToggle}
       >
         <strong>{title}</strong>
         <span className="closing-detail-chevron" aria-hidden="true">
-          {open ? "−" : "+"}
+          {isOpen ? "−" : "+"}
         </span>
       </button>
       <p className="closing-detail-body">{text}</p>

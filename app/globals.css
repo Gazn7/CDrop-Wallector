@@ -79,10 +79,10 @@ h3 {
 .site-brand {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.78rem;
+  gap: 10px;
+  font-size: 0.95rem;
   font-weight: 600;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 
@@ -889,7 +889,8 @@ h3 {
   }
 
   .feature-grid,
-  .prompt-grid {
+  .prompt-grid,
+  .workflow-grid-2col {
     grid-template-columns: 1fr;
   }
 

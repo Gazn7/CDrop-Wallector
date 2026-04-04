@@ -8,12 +8,16 @@ import FeatureCard from "./FeatureCard";
 import WorkflowCard from "./WorkflowCard";
 import ClosingDetailCard from "./ClosingDetailCard";
 import LanguageToggle from "./LanguageToggle";
+import { useState } from "react";
 import { useLanguage } from "./LanguageContext";
 import translations from "./translations";
 
 export default function WallectorLanding() {
   const { lang } = useLanguage();
   const t = translations[lang];
+  const [activeFeature, setActiveFeature] = useState(null);
+  const [activeWorkflow, setActiveWorkflow] = useState(null);
+  const [activeClosing, setActiveClosing] = useState(null);
 
   return (
     <main className="page-shell">
@@ -26,8 +30,8 @@ export default function WallectorLanding() {
             <Image
               src="/images/wallector-logo.svg"
               alt="Wallector"
-              width={80}
-              height={30}
+              width={96}
+              height={36}
               className="site-brand-logo"
             />
           </a>
@@ -96,7 +100,12 @@ export default function WallectorLanding() {
           </Lightbox>
           <div className="feature-grid">
             {t.features.map((feature) => (
-              <FeatureCard key={feature.title} {...feature} />
+              <FeatureCard
+                key={feature.title}
+                {...feature}
+                isOpen={activeFeature === feature.title}
+                onToggle={() => setActiveFeature(v => v === feature.title ? null : feature.title)}
+              />
             ))}
           </div>
         </div>
@@ -109,7 +118,12 @@ export default function WallectorLanding() {
         </div>
         <div className="workflow-grid-2col howit-below">
           {t.steps.map((step) => (
-            <WorkflowCard key={step.title} {...step} />
+            <WorkflowCard
+              key={step.title}
+              {...step}
+              isOpen={activeWorkflow === step.title}
+              onToggle={() => setActiveWorkflow(v => v === step.title ? null : step.title)}
+            />
           ))}
         </div>
       </Section>
@@ -128,7 +142,13 @@ export default function WallectorLanding() {
           </div>
           <div className="closing-detail">
             {t.closingDetails.map((item) => (
-              <ClosingDetailCard key={item.title} title={item.title} text={item.text} />
+              <ClosingDetailCard
+                key={item.title}
+                title={item.title}
+                text={item.text}
+                isOpen={activeClosing === item.title}
+                onToggle={() => setActiveClosing(v => v === item.title ? null : item.title)}
+              />
             ))}
           </div>
         </div>
