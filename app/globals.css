@@ -170,10 +170,18 @@ h3 {
   background: var(--bg);
   display: flex;
   flex-direction: column;
-  padding: 40px 32px;
+  padding: 0;
   opacity: 0;
   pointer-events: none;
   transition: opacity 250ms ease;
+}
+
+.mobile-menu-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+  z-index: -1;
 }
 
 .mobile-menu-visible {
@@ -186,6 +194,9 @@ h3 {
   flex-direction: column;
   gap: 4px;
   max-width: var(--container);
+  padding: 40px 32px;
+  background: var(--bg);
+  flex: 1;
 }
 
 .mobile-menu-link {

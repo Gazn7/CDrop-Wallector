@@ -122,7 +122,7 @@ const translations = {
 
     // Contact
     contactEyebrow: "Contatti",
-    contactTitle: "Parliamoci",
+    contactTitle: "Contattaci",
     contactDesc: "Se gestisci un marketplace e vuoi capire se fa al caso tuo, scrivici. Niente deck. Niente call commerciale. Solo una conversazione vera.",
 
     // Closing details
