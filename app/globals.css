@@ -319,16 +319,6 @@ h3 {
 .hero-visual {
   display: flex;
   align-items: stretch;
-  position: relative;
-}
-
-.hero-visual::after {
-  content: "";
-  position: absolute;
-  inset: -20% -10%;
-  background: radial-gradient(ellipse at center, rgba(239, 121, 24, 0.08) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: 0;
 }
 
 .hero-mockup {
@@ -338,8 +328,6 @@ h3 {
   background: var(--bg-surface);
   padding: 20px;
   animation: fadeUp 700ms ease-out both;
-  position: relative;
-  z-index: 1;
 }
 
 .mockup-header {

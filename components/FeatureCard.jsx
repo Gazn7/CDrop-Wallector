@@ -5,18 +5,12 @@ import { useState } from "react";
 export default function FeatureCard({ title, text }) {
   const [open, setOpen] = useState(false);
 
-  const toggle = (e) => {
-    if (e.type === "touchend") e.preventDefault();
-    setOpen((v) => !v);
-  };
-
   return (
     <article
       role="button"
       tabIndex={0}
       className={`feature-card feature-card-toggle${open ? " feature-card-open" : ""}`}
-      onTouchEnd={toggle}
-      onClick={toggle}
+      onClick={() => setOpen((v) => !v)}
     >
       <div className="feature-card-header">
         <span className="feature-dot" aria-hidden="true" />
