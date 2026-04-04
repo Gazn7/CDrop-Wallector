@@ -6,6 +6,7 @@ import VideoPlayer from "./VideoPlayer";
 import Lightbox from "./Lightbox";
 import FeatureCard from "./FeatureCard";
 import WorkflowCard from "./WorkflowCard";
+import ClosingDetailCard from "./ClosingDetailCard";
 import LanguageToggle from "./LanguageToggle";
 import { useLanguage } from "./LanguageContext";
 import translations from "./translations";
@@ -127,10 +128,7 @@ export default function WallectorLanding() {
           </div>
           <div className="closing-detail">
             {t.closingDetails.map((item) => (
-              <div key={item.title} className="closing-detail-item">
-                <strong>{item.title}</strong>
-                <p>{item.text}</p>
-              </div>
+              <ClosingDetailCard key={item.title} title={item.title} text={item.text} />
             ))}
           </div>
         </div>

@@ -701,6 +701,42 @@ h3 {
   margin: 0;
 }
 
+/* Closing detail accordion (mobile) */
+
+.closing-detail-toggle {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  width: 100%;
+  padding: 0;
+  cursor: pointer;
+  user-select: none;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.closing-detail-chevron {
+  font-size: 1.1rem;
+  color: var(--muted-light);
+  flex-shrink: 0;
+  display: none;
+}
+
+.closing-detail-body {
+  overflow: hidden;
+  max-height: none;
+  transition: max-height 280ms ease, opacity 280ms ease;
+  opacity: 1;
+}
+
 /* Footer */
 
 .site-footer {
@@ -894,6 +930,24 @@ h3 {
 
   .closing-panel {
     padding: 32px 24px;
+  }
+
+  .closing-detail-chevron {
+    display: inline;
+  }
+
+  .closing-detail-body {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-top: 0;
+    transition: max-height 280ms ease, opacity 280ms ease, margin-top 280ms ease;
+  }
+
+  .closing-detail-card-open .closing-detail-body {
+    max-height: 200px;
+    opacity: 1;
+    margin-top: 8px;
   }
 
   .proof-bar {
