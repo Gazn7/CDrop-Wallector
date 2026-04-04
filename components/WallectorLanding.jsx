@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Section from "./Section";
 import VideoPlayer from "./VideoPlayer";
+import Lightbox from "./Lightbox";
 import {
   featureBadges,
   platformFeatures,
@@ -125,15 +126,17 @@ export default function WallectorLanding() {
         description="Users open ChatGPT, describe what they're looking for, and get results from the actual catalog. No filters, no navigation, no friction."
       >
         <div className="product-showcase">
-          <div className="product-shot">
-            <Image
-              src="/images/widget-2.jpg"
-              alt="Wallector product interface"
-              width={1056}
-              height={768}
-              className="product-image"
-            />
-          </div>
+          <Lightbox>
+            <div className="product-shot">
+              <Image
+                src="/images/widget-2.jpg"
+                alt="Wallector product interface"
+                width={1056}
+                height={768}
+                className="product-image"
+              />
+            </div>
+          </Lightbox>
           <div className="feature-grid">
             {platformFeatures.map((feature) => (
               <FeatureCard key={feature.title} {...feature} />
