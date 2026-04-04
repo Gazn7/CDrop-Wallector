@@ -1,23 +1,26 @@
+"use client";
+
 import Image from "next/image";
 import Section from "./Section";
 import VideoPlayer from "./VideoPlayer";
 import Lightbox from "./Lightbox";
 import FeatureCard from "./FeatureCard";
 import WorkflowCard from "./WorkflowCard";
-import {
-  platformFeatures,
-  workflowSteps,
-  closingDetails
-} from "./data";
+import LanguageToggle from "./LanguageToggle";
+import { useLanguage } from "./LanguageContext";
+import translations from "./translations";
 
 export default function WallectorLanding() {
+  const { lang } = useLanguage();
+  const t = translations[lang];
+
   return (
     <main className="page-shell">
 
       <header className="site-header">
         <div className="site-header-inner">
           <a className="site-brand" href="/wallector">
-            <span className="site-brand-main">Criticaldrop</span>
+            <span className="site-brand-main">{t.brandMain}</span>
             <span className="site-brand-divider">&times;</span>
             <Image
               src="/images/wallector-logo.svg"
@@ -27,7 +30,7 @@ export default function WallectorLanding() {
               className="site-brand-logo"
             />
           </a>
-          <nav className="site-nav" aria-label="Primary" />
+          <LanguageToggle />
         </div>
       </header>
 
@@ -35,24 +38,22 @@ export default function WallectorLanding() {
       <Section tone="hero">
         <div className="hero-panel">
           <div className="hero-copy">
-            <span className="eyebrow">Criticaldrop &times; Wallector</span>
-            <h1>We built a ChatGPT app for Wallector.<br />Users search the entire catalog just talking.</h1>
-            <p className="hero-subtext">
-              It&apos;s live. It works on real data. If you run a marketplace, this is what your users have been waiting for.
-            </p>
+            <span className="eyebrow">{t.eyebrow}</span>
+            <h1>{t.h1Line1}<br />{t.h1Line2}</h1>
+            <p className="hero-subtext">{t.subtext}</p>
             <div className="hero-actions">
-              <a className="button button-primary" href="#how-it-works">See it live</a>
-              <a className="hero-nav-link" href="#product">What it does</a>
-              <a className="hero-nav-link" href="#how-it-works">How it works</a>
-              <a className="button button-secondary" href="#contact">Get in touch</a>
+              <a className="button button-primary" href="#how-it-works">{t.btnSeeItLive}</a>
+              <a className="hero-nav-link" href="#product">{t.btnWhatItDoes}</a>
+              <a className="hero-nav-link" href="#how-it-works">{t.btnHowItWorks}</a>
+              <a className="button button-secondary" href="#contact">{t.btnGetInTouch}</a>
             </div>
           </div>
 
           <div className="hero-visual">
             <div className="hero-mockup">
               <div className="mockup-header">
-                <span>Wallector for ChatGPT</span>
-                <span>Live</span>
+                <span>{t.mockupLabel}</span>
+                <span>{t.mockupStatus}</span>
               </div>
               <div className="mockup-image-frame">
                 <Image
@@ -72,29 +73,14 @@ export default function WallectorLanding() {
       {/* Proof bar */}
       <div className="proof-bar">
         <div className="proof-bar-inner">
-          <div className="proof-item">
-            <span className="proof-dot" />
-            Live on Wallector
-          </div>
-          <div className="proof-item">
-            <span className="proof-dot" />
-            Submitted to OpenAI Marketplace
-          </div>
-          <div className="proof-item">
-            <span className="proof-dot" />
-            Less than one month to ship
-          </div>
+          <div className="proof-item"><span className="proof-dot" />{t.proof1}</div>
+          <div className="proof-item"><span className="proof-dot" />{t.proof2}</div>
+          <div className="proof-item"><span className="proof-dot" />{t.proof3}</div>
         </div>
       </div>
 
       {/* Product overview */}
-      <Section
-        id="product"
-        tone="highlight"
-        eyebrow="Product overview"
-        title="Product overview"
-        description="Users open ChatGPT. They describe what they want. They get results from the real catalog. No filters. No navigation. No friction."
-      >
+      <Section id="product" tone="highlight" eyebrow={t.productEyebrow} title={t.productTitle} description={t.productDesc}>
         <div className="product-showcase">
           <Lightbox>
             <div className="product-shot">
@@ -108,7 +94,7 @@ export default function WallectorLanding() {
             </div>
           </Lightbox>
           <div className="feature-grid">
-            {platformFeatures.map((feature) => (
+            {t.features.map((feature) => (
               <FeatureCard key={feature.title} {...feature} />
             ))}
           </div>
@@ -116,31 +102,23 @@ export default function WallectorLanding() {
       </Section>
 
       {/* How it works */}
-      <Section
-        id="how-it-works"
-        eyebrow="How it works"
-        title="How it works"
-        description="Four steps. No magic, just good engineering."
-      >
+      <Section id="how-it-works" eyebrow={t.howEyebrow} title={t.howTitle} description={t.howDesc}>
         <div className="video-wrapper">
           <VideoPlayer src="/video/demo.mp4" />
         </div>
         <div className="workflow-grid-2col howit-below">
-          {workflowSteps.map((step) => (
+          {t.steps.map((step) => (
             <WorkflowCard key={step.title} {...step} />
           ))}
         </div>
       </Section>
 
       {/* Contact */}
-      <Section id="contact" eyebrow="Contact" tone="highlight">
+      <Section id="contact" eyebrow={t.contactEyebrow} tone="highlight">
         <div className="closing-panel">
           <div className="closing-copy">
-            <h2>Let&apos;s talk</h2>
-            <p>
-              If you run a marketplace and want to know if this is right for you, reach out.
-              No deck. No sales call. Just a real conversation.
-            </p>
+            <h2>{t.contactTitle}</h2>
+            <p>{t.contactDesc}</p>
             <div className="hero-actions">
               <a className="button button-primary" href="mailto:hello@criticaldrop.com">
                 hello@criticaldrop.com
@@ -148,7 +126,7 @@ export default function WallectorLanding() {
             </div>
           </div>
           <div className="closing-detail">
-            {closingDetails.map((item) => (
+            {t.closingDetails.map((item) => (
               <div key={item.title} className="closing-detail-item">
                 <strong>{item.title}</strong>
                 <p>{item.text}</p>
@@ -161,19 +139,17 @@ export default function WallectorLanding() {
       <footer className="site-footer">
         <div className="site-footer-inner">
           <div className="site-footer-block">
-            <span className="footer-label">Project</span>
-            <p>
-              Wallector is a project by Criticaldrop. A custom ChatGPT app and AI connector built for the art marketplace.
-            </p>
+            <span className="footer-label">{t.footerProjectLabel}</span>
+            <p>{t.footerProjectText}</p>
           </div>
           <div className="site-footer-block">
-            <span className="footer-label">Navigation</span>
-            <a href="#product">What it does</a>
-            <a href="#how-it-works">How it works</a>
-            <a href="#contact">Get in touch</a>
+            <span className="footer-label">{t.footerNavLabel}</span>
+            <a href="#product">{t.footerNav1}</a>
+            <a href="#how-it-works">{t.footerNav2}</a>
+            <a href="#contact">{t.footerNav3}</a>
           </div>
           <div className="site-footer-block">
-            <span className="footer-label">Contacts</span>
+            <span className="footer-label">{t.footerContactsLabel}</span>
             <a href="mailto:hello@criticaldrop.com">hello@criticaldrop.com</a>
           </div>
         </div>

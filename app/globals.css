@@ -100,6 +100,39 @@ h3 {
   opacity: 0.9;
 }
 
+.lang-toggle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.lang-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  padding: 4px 2px;
+  transition: color 0.15s;
+}
+
+.lang-btn:hover {
+  color: var(--text);
+}
+
+.lang-active {
+  color: var(--accent);
+}
+
+.lang-sep {
+  font-size: 0.7rem;
+  color: var(--line);
+  user-select: none;
+}
+
 .site-nav {
   display: flex;
   align-items: center;
