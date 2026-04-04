@@ -43,7 +43,7 @@ export default function WallectorLanding() {
       <Section tone="hero">
         <div className="hero-panel">
           <div className="hero-copy">
-            <span className="eyebrow">{t.eyebrow}</span>
+            <span className="eyebrow">{t.brandMain} <span className="eyebrow-x">×</span> Wallector</span>
             <h1>{t.h1Line1}<br />{t.h1Line2}</h1>
             <p className="hero-subtext">{t.subtext}</p>
             <div className="hero-actions">
