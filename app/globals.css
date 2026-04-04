@@ -33,7 +33,6 @@ body {
   color: var(--text);
   font-family: "DM Sans", system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
-  overflow-x: hidden;
 }
 
 a {
@@ -407,6 +406,7 @@ h3 {
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   overflow: hidden;
+  transform: translateZ(0);
 }
 
 .howit-below {
@@ -454,6 +454,7 @@ h3 {
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   overflow: hidden;
+  transform: translateZ(0);
 }
 
 .feature-card {
@@ -485,14 +486,22 @@ h3 {
 }
 
 .feature-card-toggle {
+  appearance: none;
+  -webkit-appearance: none;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  width: 100%;
+  padding: 0;
   cursor: pointer;
   user-select: none;
   touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }
 
-.feature-card-toggle:active,
-.workflow-card-toggle:active {
+.feature-card-toggle:active {
   background: var(--bg-surface-2);
 }
 
@@ -555,6 +564,7 @@ h3 {
   border: 1px solid var(--line);
   border-radius: var(--radius-lg);
   overflow: hidden;
+  transform: translateZ(0);
 }
 
 .workflow-card {
@@ -835,10 +845,7 @@ h3 {
   }
 
   .lang-toggle {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
+    transform: translateZ(0);
   }
 
   .site-nav {

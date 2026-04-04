@@ -6,19 +6,18 @@ export default function WorkflowCard({ title, text }) {
   const [open, setOpen] = useState(false);
 
   return (
-    <article
-      role="button"
-      tabIndex={0}
-      className={`workflow-card workflow-card-toggle${open ? " workflow-card-open" : ""}`}
-      onClick={() => setOpen((v) => !v)}
-    >
-      <div className="feature-card-header">
+    <div className={`workflow-card${open ? " workflow-card-open" : ""}`}>
+      <button
+        type="button"
+        className="feature-card-toggle feature-card-header"
+        onClick={() => setOpen((v) => !v)}
+      >
         <h3>{title}</h3>
         <span className="feature-card-chevron" aria-hidden="true">
           {open ? "−" : "+"}
         </span>
-      </div>
+      </button>
       <p className="feature-card-body">{text}</p>
-    </article>
+    </div>
   );
 }
