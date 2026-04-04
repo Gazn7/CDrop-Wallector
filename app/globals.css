@@ -371,6 +371,8 @@ h3 {
   overflow: hidden;
   border: 1px solid var(--line);
   background: var(--bg-surface);
+  max-width: 720px;
+  margin: 0 auto;
 }
 
 .video-wrapper video {
