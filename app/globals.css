@@ -103,6 +103,8 @@ h3 {
   display: flex;
   align-items: center;
   gap: 6px;
+  position: relative;
+  z-index: 1;
 }
 
 .lang-btn {
@@ -116,6 +118,8 @@ h3 {
   color: var(--muted);
   padding: 8px 6px;
   transition: color 0.15s;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .lang-btn:hover {
@@ -1088,5 +1092,16 @@ h3 {
 
   .site-footer-inner {
     grid-template-columns: 1fr;
+  }
+
+  .hero-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-actions .button,
+  .hero-actions .hero-nav-link {
+    width: 100%;
+    justify-content: center;
   }
 }
