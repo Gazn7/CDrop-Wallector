@@ -44,9 +44,9 @@ export default function WallectorLanding() {
         <div className="hero-panel">
           <div className="hero-copy">
             <span className="eyebrow">Criticaldrop / Wallector</span>
-            <h1>We built a ChatGPT app for Wallector. Users can search the entire catalog by talking to it.</h1>
+            <h1>We built a ChatGPT app for Wallector. Users search the entire catalog by talking to it.</h1>
             <p className="hero-subtext">
-              It&apos;s live. It works on real catalog data. Built for marketplaces that want to stop losing users to bad search.
+              It&apos;s live. It works on real data. If you run a marketplace, this is what your users have been waiting for.
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href="#how-it-works">See it live</a>
@@ -90,7 +90,7 @@ export default function WallectorLanding() {
           </div>
           <div className="proof-item">
             <span className="proof-dot" />
-            3&ndash;5 days to ship
+            3 to 5 days to ship
           </div>
         </div>
       </div>
@@ -101,7 +101,7 @@ export default function WallectorLanding() {
         tone="highlight"
         eyebrow="Product overview"
         title="Product overview."
-        description="Users open ChatGPT, describe what they're looking for, and get results from the actual catalog. No filters, no navigation, no friction."
+        description="Users open ChatGPT. They describe what they want. They get results from the real catalog. No filters. No navigation. No friction."
       >
         <div className="product-showcase">
           <Lightbox>
@@ -149,8 +149,8 @@ export default function WallectorLanding() {
           <div className="closing-copy">
             <h2>Let&apos;s talk.</h2>
             <p>
-              If you run a marketplace and want to understand if this makes sense for you, reach out.
-              No deck, no sales call. Just a technical conversation.
+              If you run a marketplace and want to know if this is right for you, reach out.
+              No deck. No sales call. Just a real conversation.
             </p>
             <div className="hero-actions">
               <a className="button button-primary" href="mailto:hello@criticaldrop.com">
@@ -174,8 +174,7 @@ export default function WallectorLanding() {
           <div className="site-footer-block">
             <span className="footer-label">Project</span>
             <p>
-              Wallector is a project developed by Criticaldrop — a custom ChatGPT app and MCP integration
-              for the art marketplace.
+              Wallector is a project by Criticaldrop. A custom ChatGPT app and AI connector built for the art marketplace.
             </p>
           </div>
           <div className="site-footer-block">
