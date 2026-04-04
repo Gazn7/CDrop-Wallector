@@ -830,6 +830,15 @@ h3 {
   cursor: zoom-in;
 }
 
+.lightbox-trigger * {
+  cursor: zoom-in;
+  pointer-events: none;
+}
+
+.lightbox-trigger img {
+  pointer-events: none;
+}
+
 .lightbox-overlay {
   position: fixed;
   inset: 0;
