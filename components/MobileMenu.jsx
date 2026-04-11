@@ -2,20 +2,14 @@
 
 import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { useLanguage } from "./LanguageContext";
-import translations from "./translations";
+
+const links = [
+  { label: "Home", href: "#" },
+  { label: "How it works", href: "#how-it-works" },
+  { label: "Contact", href: "#contact" },
+];
 
 function MenuOverlay({ open, onClose }) {
-  const { lang } = useLanguage();
-  const t = translations[lang];
-
-  const links = [
-    { label: "Home", href: "#" },
-    { label: t.productTitle, href: "#product" },
-    { label: t.howTitle, href: "#how-it-works" },
-    { label: t.contactTitle, href: "#contact" },
-  ];
-
   return (
     <div className={`mobile-menu-overlay${open ? " mobile-menu-visible" : ""}`}>
       <nav className="mobile-menu-nav">

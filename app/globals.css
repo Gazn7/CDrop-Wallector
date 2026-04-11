@@ -1152,3 +1152,72 @@ h3 {
     justify-content: center;
   }
 }
+
+/* Panels (fused "How it works" section) */
+
+.panel-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  align-items: start;
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: transform 220ms ease, border-color 220ms ease;
+}
+
+.panel:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+.panel-image-frame {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-surface-2);
+  aspect-ratio: 4 / 3;
+}
+
+.panel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.panel-copy {
+  padding: 0 24px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.panel-copy h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.panel-copy p {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--muted-light);
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .panel-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+

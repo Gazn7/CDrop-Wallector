@@ -1,10 +1,9 @@
 import "./globals.css";
-import { LanguageProvider } from "../components/LanguageContext";
 
 export const metadata = {
-  title: "Criticaldrop | Wallector",
+  title: "Wallector | A ChatGPT app for the art market",
   description:
-    "Criticaldrop builds AI products, agents, ChatGPT apps and custom software. Wallector is the vertical ChatGPT app for the art market."
+    "Wallector is a custom ChatGPT app connected to a real art catalog. Users search the entire inventory just by talking."
 };
 
 export default function RootLayout({ children }) {
@@ -16,7 +15,7 @@ export default function RootLayout({ children }) {
       </head>
       <body>
         <script dangerouslySetInnerHTML={{ __html: `window.scrollTo(0,0);` }} />
-        <LanguageProvider>{children}</LanguageProvider>
+        {children}
       </body>
     </html>
   );
