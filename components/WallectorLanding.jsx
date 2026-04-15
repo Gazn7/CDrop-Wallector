@@ -16,7 +16,7 @@ const panels = [
   },
   {
     title: "It remembers the conversation",
-    text: "\u201cShow me something similar but cheaper.\u201d That works. Every message builds on the last. No search engine can do that.",
+    text: "\u201cShow me something similar but cheaper.\u201d That actually works. Every message builds on the last, giving your users a personal shopper experience. Traditional search engines can\u2019t do that.",
     image: "/images/widget-2.jpg",
     alt: "Conversational memory in Wallector"
   },
@@ -39,7 +39,7 @@ const steps = [
     number: "02",
     title: "Build",
     time: "2\u20133 weeks",
-    text: "We fork the codebase, remap it to your data model, brand it for your marketplace."
+    text: "We adapt our proven core to your specific data model. It\u2019s fully customized and branded for your marketplace."
   },
   {
     number: "03",
@@ -109,8 +109,9 @@ export default function WallectorLanding() {
       <Section tone="hero">
         <div className="hero-panel">
           <div className="hero-copy">
-            <h1>The art catalog that answers back.</h1>
-            <p className="hero-subtext">Marketplace users hate filters. We turned your catalog into a ChatGPT app. They just ask.</p>
+            <span className="hero-eyebrow">A service by CriticalDrop</span>
+            <h1>Turn your marketplace into a ChatGPT App.</h1>
+            <p className="hero-subtext">Users hate clicking through endless filters. We build custom conversational search engines for your catalog. They ask, your catalog answers.</p>
           </div>
 
           <div className="hero-visual">
@@ -136,13 +137,32 @@ export default function WallectorLanding() {
 
       {/* TODO: future "Try it" embedded prompt widget goes here */}
 
+      {/* Wallector case study */}
+      <Section tone="default">
+        <div className="case-study-panel">
+          <ScrollReveal animation="reveal">
+            <div className="case-study-copy">
+              <span className="eyebrow">Case study</span>
+              <h2>See it in action: Wallector</h2>
+              <p>We built Wallector to solve search friction in the fine art market. Try the live ChatGPT app and see how it completely changes the browsing experience.</p>
+              <div className="hero-actions">
+                {/* TODO: replace href with the real public ChatGPT app URL when available */}
+                <a className="button button-primary" href="/try-wallector">
+                  Try Wallector Live <span aria-hidden="true">&rarr;</span>
+                </a>
+              </div>
+            </div>
+          </ScrollReveal>
+        </div>
+      </Section>
+
       {/* How it works (coverflow 3D) */}
       <Section
         id="how-it-works"
         tone="highlight"
         eyebrow="How it works"
         title="How it works"
-        description="Wallector connects to your catalog and becomes a ChatGPT app. Your users just talk."
+        description="No more filters. Just natural conversation."
       >
         <div className="coverflow-stage" role="group" aria-label="Feature showcase">
           {panels.map((panel, idx) => {
@@ -279,8 +299,8 @@ export default function WallectorLanding() {
         <div className="closing-panel closing-panel--after-steps">
           <ScrollReveal animation="reveal">
             <div className="closing-copy">
-              <h2>Let&rsquo;s talk</h2>
-              <p>Run a marketplace? Let&rsquo;s see if this fits yours.</p>
+              <h2>Ready to upgrade your search?</h2>
+              <p>Let&rsquo;s see if your catalog is a good fit for a ChatGPT integration. No strings attached.</p>
               <div className="hero-actions">
                 <a className="button button-primary" href="mailto:info@criticaldrop.com?subject=Wallector%20for%20our%20marketplace">
                   Contact us
