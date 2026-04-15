@@ -107,19 +107,19 @@ h3 {
 }
 
 .site-brand-cd {
-  width: 32px;
-  height: 32px;
-  opacity: 0.92;
+  width: auto;
+  height: 30px;
+  opacity: 1;
   flex-shrink: 0;
 }
 
 .site-brand-x {
-  color: var(--muted);
-  font-size: 1.2rem;
+  color: #ffffff;
+  font-size: 1.3rem;
   font-weight: 300;
   line-height: 1;
-  margin: 0 2px;
-  opacity: 0.7;
+  margin: 0 4px;
+  opacity: 0.95;
 }
 
 /* Header actions */
@@ -1076,13 +1076,13 @@ h3 {
   }
 
   .site-brand-cd {
-    width: 22px;
-    height: 22px;
+    width: auto;
+    height: 20px;
   }
 
   .site-brand-x {
-    font-size: 0.95rem;
-    margin: 0 1px;
+    font-size: 1rem;
+    margin: 0 2px;
   }
 
   .site-brand-divider {

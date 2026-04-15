@@ -86,8 +86,8 @@ export default function WallectorLanding() {
             <Image
               src="/images/criticaldrop-logo.svg"
               alt="CriticalDrop"
-              width={36}
-              height={36}
+              width={64}
+              height={30}
               className="site-brand-cd"
             />
             <span className="site-brand-x" aria-hidden="true">×</span>
