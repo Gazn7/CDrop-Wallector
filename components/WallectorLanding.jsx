@@ -33,19 +33,28 @@ const steps = [
     number: "01",
     title: "Discovery",
     time: "1 week",
-    text: "We dive into your inventory data. We outline a clear plan to integrate the AI seamlessly."
+    lines: [
+      "We dive into your inventory data",
+      "We outline a clear plan to integrate the AI seamlessly"
+    ]
   },
   {
     number: "02",
     title: "Build",
     time: "2\u20133 weeks",
-    text: "We do the heavy lifting, mapping your specific data to our AI core. The final app is 100% your brand."
+    lines: [
+      "We do the heavy lifting, mapping your specific data to our AI core",
+      "The final app is 100% your brand"
+    ]
   },
   {
     number: "03",
     title: "Launch",
     time: "1 week",
-    text: "We publish the app on the marketplace and set up the hosting. You get a ready-to-use solution."
+    lines: [
+      "We publish the app on the marketplace and set up the hosting",
+      "You get a ready-to-use solution"
+    ]
   }
 ];
 
@@ -303,7 +312,9 @@ export default function WallectorLanding() {
                       <span className="step-number">{step.number}</span>
                       <div className="step-copy">
                         <h3>{step.title} <span className="step-time">{step.time}</span></h3>
-                        <p>{step.text}</p>
+                        {step.lines.map((line) => (
+                          <p key={line}>{line}</p>
+                        ))}
                       </div>
                     </div>
                   </div>
