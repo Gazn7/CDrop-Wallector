@@ -232,9 +232,29 @@ export default function WallectorLanding() {
         </div>
       </Section>
 
-      {/* Contact + Work with us (fused) */}
-      <Section id="contact" tone="dark" eyebrow="Contact">
-        <div className="closing-panel">
+      {/* How we work + Let's talk (fused) */}
+      <Section
+        id="contact"
+        tone="dark"
+        eyebrow="How we work"
+        title="From zero to live in 4 weeks"
+        description="Three steps. One codebase. Your marketplace gets a ChatGPT app."
+      >
+        <div className="step-grid">
+          {steps.map((step, idx) => (
+            <ScrollReveal key={step.number} animation="reveal" delay={idx * 100}>
+              <article className="step-card">
+                <span className="step-number">{step.number}</span>
+                <div className="step-copy">
+                  <h3>{step.title} <span className="step-time">{step.time}</span></h3>
+                  <p>{step.text}</p>
+                </div>
+              </article>
+            </ScrollReveal>
+          ))}
+        </div>
+
+        <div className="closing-panel closing-panel--after-steps">
           <ScrollReveal animation="reveal">
             <div className="closing-copy">
               <h2>Let&rsquo;s talk</h2>
@@ -249,27 +269,6 @@ export default function WallectorLanding() {
               </div>
             </div>
           </ScrollReveal>
-        </div>
-
-        <div className="contact-process">
-          <div className="contact-process-heading">
-            <span className="eyebrow">How we work</span>
-            <h3>From zero to live in 4 weeks</h3>
-            <p>Three steps. One codebase. Your marketplace gets a ChatGPT app.</p>
-          </div>
-          <div className="step-grid">
-            {steps.map((step, idx) => (
-              <ScrollReveal key={step.number} animation="reveal" delay={idx * 100}>
-                <article className="step-card">
-                  <span className="step-number">{step.number}</span>
-                  <div className="step-copy">
-                    <h3>{step.title} <span className="step-time">{step.time}</span></h3>
-                    <p>{step.text}</p>
-                  </div>
-                </article>
-              </ScrollReveal>
-            ))}
-          </div>
         </div>
       </Section>
 

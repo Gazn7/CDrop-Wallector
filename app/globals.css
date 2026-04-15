@@ -1500,46 +1500,15 @@ h3 {
   }
 }
 
-/* Contact process (Work with us, fused into Contact) */
+/* Closing panel placed after the steps grid */
 
-.contact-process {
+.closing-panel--after-steps {
   margin-top: 64px;
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
-}
-
-.contact-process-heading {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  align-items: flex-start;
-  max-width: 640px;
-}
-
-.contact-process-heading .eyebrow {
-  margin-bottom: 4px;
-}
-
-.contact-process-heading h3 {
-  font-size: clamp(1.4rem, 2.4vw, 1.85rem);
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: var(--text);
-  margin: 0;
-}
-
-.contact-process-heading p {
-  font-size: 0.98rem;
-  line-height: 1.6;
-  color: var(--muted-light);
-  margin: 0;
 }
 
 @media (max-width: 1024px) {
-  .contact-process {
+  .closing-panel--after-steps {
     margin-top: 48px;
-    gap: 20px;
   }
 }
 
