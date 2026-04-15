@@ -33,19 +33,19 @@ const steps = [
     number: "01",
     title: "Discovery",
     time: "1 week",
-    text: "We look at your catalog, data, and users. We tell you if it fits. No slides, no guessing."
+    text: "We dive into your inventory data. We outline a clear plan to integrate the AI seamlessly."
   },
   {
     number: "02",
     title: "Build",
     time: "2\u20133 weeks",
-    text: "We adapt our proven core to your specific data model. It\u2019s fully customized and branded for your marketplace."
+    text: "We do the heavy lifting, mapping your specific data to our AI core. The final app is 100% your brand."
   },
   {
     number: "03",
     title: "Launch",
     time: "1 week",
-    text: "We deploy on Cloud Run, submit to the OpenAI marketplace, hand you the docs."
+    text: "We publish the app on the marketplace and set up the hosting. You get a ready-to-use solution."
   }
 ];
 
@@ -148,7 +148,18 @@ export default function WallectorLanding() {
         id="how-it-works"
         tone="highlight"
         eyebrow={"How it works \u2014 Wallector case"}
-        title="See it in action: Wallector"
+        title={
+          <>
+            Our use case:{" "}
+            <Image
+              src="/images/wallector-logo.svg"
+              alt="Wallector"
+              width={120}
+              height={44}
+              className="inline-brand-logo"
+            />
+          </>
+        }
         description={
           <>
             We built Wallector to solve search friction in the fine art market
