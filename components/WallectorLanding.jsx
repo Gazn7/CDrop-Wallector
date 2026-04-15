@@ -79,6 +79,14 @@ export default function WallectorLanding() {
         <div className="site-header-inner">
           <a className="site-brand" href="/wallector">
             <Image
+              src="/images/criticaldrop-logo.svg"
+              alt="CriticalDrop"
+              width={36}
+              height={36}
+              className="site-brand-cd"
+            />
+            <span className="site-brand-x" aria-hidden="true">×</span>
+            <Image
               src="/images/wallector-logo.svg"
               alt="Wallector"
               width={120}
