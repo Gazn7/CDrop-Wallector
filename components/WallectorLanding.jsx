@@ -123,7 +123,7 @@ export default function WallectorLanding() {
           <div className="hero-visual">
             <div className="hero-mockup">
               <div className="mockup-header">
-                <span>Wallector for ChatGPT</span>
+                <span>Wallector&rsquo;s app in ChatGPT</span>
                 <span>Live</span>
               </div>
               <div className="mockup-image-frame">
