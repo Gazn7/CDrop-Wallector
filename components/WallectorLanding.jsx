@@ -112,11 +112,11 @@ export default function WallectorLanding() {
             <span className="hero-eyebrow">A service by CriticalDrop</span>
             <h1>Turn your marketplace into a ChatGPT App</h1>
             <p className="hero-subtext">
-              Users hate clicking through endless search.
+              Users hate clicking through endless search
               <br />
-              We enable you with custom conversational search agents for your catalog.
+              We enable you with a custom search agent for your catalog
               <br />
-              Users ask, your catalog answers.
+              Users ask, your catalog answers
             </p>
           </div>
 
