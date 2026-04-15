@@ -110,8 +110,14 @@ export default function WallectorLanding() {
         <div className="hero-panel">
           <div className="hero-copy">
             <span className="hero-eyebrow">A service by CriticalDrop</span>
-            <h1>Turn your marketplace into a ChatGPT App.</h1>
-            <p className="hero-subtext">Users hate clicking through endless filters. We build custom conversational search engines for your catalog. They ask, your catalog answers.</p>
+            <h1>Turn your marketplace into a ChatGPT App</h1>
+            <p className="hero-subtext">
+              Users hate clicking through endless search.
+              <br />
+              We enable you with custom conversational search agents for your catalog.
+              <br />
+              Users ask, your catalog answers.
+            </p>
           </div>
 
           <div className="hero-visual">
@@ -245,7 +251,7 @@ export default function WallectorLanding() {
           <div className="try-wallector-divider" aria-hidden="true" />
           <div className="try-wallector-row">
             <p className="try-wallector-text">
-              Try the live ChatGPT app and see how it completely changes the browsing experience.
+              Try the live ChatGPT app and see how it completely changes the browsing experience
             </p>
             {/* TODO: replace href with the real public ChatGPT app URL when available */}
             <a className="button button-primary try-wallector-cta" href="/try-wallector">

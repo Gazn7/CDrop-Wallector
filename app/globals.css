@@ -455,7 +455,15 @@ h3 {
   line-height: 1.6;
   color: var(--muted-light);
   margin: 0;
-  max-width: 560px;
+  max-width: none;
+  flex: 1 1 auto;
+  white-space: nowrap;
+}
+
+@media (max-width: 1280px) {
+  .try-wallector-text {
+    white-space: normal;
+  }
 }
 
 .try-wallector-cta {
