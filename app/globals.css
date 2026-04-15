@@ -501,6 +501,28 @@ h3 {
   flex-shrink: 0;
 }
 
+.proof-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.proof-chip-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.proof-chip-label {
+  font-size: 0.68rem;
+  color: var(--muted);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 /* Video section */
 
 .howit-grid {
@@ -1216,6 +1238,73 @@ h3 {
 
 @media (max-width: 1024px) {
   .panel-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* Steps ("Work with us" section) */
+
+.step-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  align-items: start;
+}
+
+.step-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 32px 28px;
+  background: var(--bg-surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-xl);
+  transition: transform 220ms ease, border-color 220ms ease;
+}
+
+.step-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+}
+
+.step-number {
+  font-size: 2.4rem;
+  font-weight: 300;
+  color: var(--accent);
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.step-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.step-copy h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.step-time {
+  font-weight: 400;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.step-copy p {
+  font-size: 0.92rem;
+  line-height: 1.65;
+  color: var(--muted-light);
+  margin: 0;
+}
+
+@media (max-width: 1024px) {
+  .step-grid {
     grid-template-columns: 1fr;
     gap: 24px;
   }

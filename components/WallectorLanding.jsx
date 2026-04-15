@@ -28,6 +28,34 @@ const panels = [
   }
 ];
 
+const proofItems = [
+  { value: "Live", label: "In production on ChatGPT" },
+  { value: "Submitted", label: "OpenAI marketplace review" },
+  { value: "3\u20135 days", label: "Average onboarding" },
+  { value: "~70%", label: "Code reusable across clients" }
+];
+
+const steps = [
+  {
+    number: "01",
+    title: "Discovery",
+    time: "1 week",
+    text: "We look at your catalog, data, and users. We tell you if it fits. No slides, no guessing."
+  },
+  {
+    number: "02",
+    title: "Build",
+    time: "2\u20133 weeks",
+    text: "We fork the codebase, remap it to your data model, brand it for your marketplace."
+  },
+  {
+    number: "03",
+    title: "Launch",
+    time: "1 week",
+    text: "We deploy on Cloud Run, submit to the OpenAI marketplace, hand you the docs."
+  }
+];
+
 export default function WallectorLanding() {
   return (
     <main className="page-shell">
@@ -53,10 +81,11 @@ export default function WallectorLanding() {
       <Section tone="hero">
         <div className="hero-panel">
           <div className="hero-copy">
-            <h1>We built a ChatGPT app for Wallector<br />Users search the entire catalog just talking</h1>
-            <p className="hero-subtext">It&rsquo;s live. It works on real data. If you run a marketplace, this is what your users have been waiting for.</p>
+            <h1>The art catalog that answers back.</h1>
+            <p className="hero-subtext">Marketplace users hate filters. We turned your catalog into a ChatGPT app. They just ask.</p>
             <div className="hero-actions">
-              <a className="hero-nav-link" href="#how-it-works">How it works</a>
+              <a className="button button-primary" href="#how-it-works">See the features</a>
+              <a className="hero-nav-link" href="#work-with-us">Work with us</a>
             </div>
           </div>
 
@@ -80,6 +109,20 @@ export default function WallectorLanding() {
           </div>
         </div>
       </Section>
+
+      {/* Proof bar */}
+      <div className="proof-bar">
+        <div className="proof-bar-inner">
+          {proofItems.map((item) => (
+            <div key={item.value} className="proof-chip">
+              <span className="proof-chip-value">{item.value}</span>
+              <span className="proof-chip-label">{item.label}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* TODO: future "Try it" embedded prompt widget goes here */}
 
       {/* How it works (fused: product overview + how it works) */}
       <Section
@@ -114,15 +157,41 @@ export default function WallectorLanding() {
         </div>
       </Section>
 
+      {/* Work with us */}
+      <Section
+        id="work-with-us"
+        tone="dark"
+        eyebrow="Work with us"
+        title="From zero to live in 4 weeks"
+        description="Three steps. One codebase. Your marketplace gets a ChatGPT app."
+      >
+        <div className="step-grid">
+          {steps.map((step, idx) => (
+            <ScrollReveal key={step.number} animation="reveal" delay={idx * 100}>
+              <article className="step-card">
+                <span className="step-number">{step.number}</span>
+                <div className="step-copy">
+                  <h3>{step.title} <span className="step-time">{step.time}</span></h3>
+                  <p>{step.text}</p>
+                </div>
+              </article>
+            </ScrollReveal>
+          ))}
+        </div>
+      </Section>
+
       {/* Contact */}
       <Section id="contact" eyebrow="Contact">
         <div className="closing-panel">
           <ScrollReveal animation="reveal">
             <div className="closing-copy">
               <h2>Let&rsquo;s talk</h2>
-              <p>If you run a marketplace and want to know if this fits, reach out. Real conversation, no deck.</p>
+              <p>Run a marketplace? Let&rsquo;s see if this fits yours. 30 minutes, no deck.</p>
               <div className="hero-actions">
-                <a className="button button-primary" href="mailto:info@criticaldrop.com">
+                <a className="button button-primary" href="mailto:info@criticaldrop.com?subject=Wallector%20for%20our%20marketplace">
+                  Book a 30-min call
+                </a>
+                <a className="hero-nav-link" href="mailto:info@criticaldrop.com">
                   info@criticaldrop.com
                 </a>
               </div>
@@ -140,6 +209,7 @@ export default function WallectorLanding() {
           <div className="site-footer-block">
             <span className="footer-label">Navigation</span>
             <a href="#how-it-works">How it works</a>
+            <a href="#work-with-us">Work with us</a>
             <a href="#contact">Contact</a>
           </div>
           <div className="site-footer-block">
