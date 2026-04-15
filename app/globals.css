@@ -1383,7 +1383,7 @@ h3 {
   align-items: center;
   justify-content: center;
   padding: 48px 24px;
-  cursor: zoom-out;
+  cursor: default;
   animation: overlayFade 220ms ease;
 }
 
@@ -1395,7 +1395,7 @@ h3 {
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  cursor: zoom-out;
+  cursor: default;
   animation: expandIn 360ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
