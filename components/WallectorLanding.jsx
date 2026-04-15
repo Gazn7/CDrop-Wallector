@@ -232,31 +232,8 @@ export default function WallectorLanding() {
         </div>
       </Section>
 
-      {/* Work with us */}
-      <Section
-        id="work-with-us"
-        tone="dark"
-        eyebrow="Work with us"
-        title="From zero to live in 4 weeks"
-        description="Three steps. One codebase. Your marketplace gets a ChatGPT app."
-      >
-        <div className="step-grid">
-          {steps.map((step, idx) => (
-            <ScrollReveal key={step.number} animation="reveal" delay={idx * 100}>
-              <article className="step-card">
-                <span className="step-number">{step.number}</span>
-                <div className="step-copy">
-                  <h3>{step.title} <span className="step-time">{step.time}</span></h3>
-                  <p>{step.text}</p>
-                </div>
-              </article>
-            </ScrollReveal>
-          ))}
-        </div>
-      </Section>
-
-      {/* Contact */}
-      <Section id="contact" eyebrow="Contact">
+      {/* Contact + Work with us (fused) */}
+      <Section id="contact" tone="dark" eyebrow="Contact">
         <div className="closing-panel">
           <ScrollReveal animation="reveal">
             <div className="closing-copy">
@@ -273,6 +250,27 @@ export default function WallectorLanding() {
             </div>
           </ScrollReveal>
         </div>
+
+        <div className="contact-process">
+          <div className="contact-process-heading">
+            <span className="eyebrow">How we work</span>
+            <h3>From zero to live in 4 weeks</h3>
+            <p>Three steps. One codebase. Your marketplace gets a ChatGPT app.</p>
+          </div>
+          <div className="step-grid">
+            {steps.map((step, idx) => (
+              <ScrollReveal key={step.number} animation="reveal" delay={idx * 100}>
+                <article className="step-card">
+                  <span className="step-number">{step.number}</span>
+                  <div className="step-copy">
+                    <h3>{step.title} <span className="step-time">{step.time}</span></h3>
+                    <p>{step.text}</p>
+                  </div>
+                </article>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
       </Section>
 
       <footer className="site-footer">
@@ -284,7 +282,6 @@ export default function WallectorLanding() {
           <div className="site-footer-block">
             <span className="footer-label">Navigation</span>
             <a href="#how-it-works">How it works</a>
-            <a href="#work-with-us">Work with us</a>
             <a href="#contact">Contact</a>
           </div>
           <div className="site-footer-block">
