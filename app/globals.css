@@ -1175,71 +1175,189 @@ h3 {
   }
 }
 
-/* Panels (fused "How it works" section) */
+/* Coverflow ("How it works" section) */
 
-.panel-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 32px;
-  align-items: start;
-}
-
-.panel {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  background: var(--bg-surface);
-  border: 1px solid var(--line);
-  border-radius: var(--radius-xl);
-  overflow: hidden;
-  transition: transform 220ms ease, border-color 220ms ease;
-}
-
-.panel:hover {
-  transform: translateY(-2px);
-  border-color: var(--accent);
-}
-
-.panel-image-frame {
+.coverflow-stage {
   position: relative;
-  overflow: hidden;
-  background: var(--bg-surface-2);
-  aspect-ratio: 4 / 3;
+  width: 100%;
+  height: clamp(380px, 48vw, 540px);
+  perspective: 1600px;
+  transform-style: preserve-3d;
+  margin-top: 8px;
 }
 
-.panel-image {
+.coverflow-panel {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: clamp(320px, 38vw, 560px);
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transform-origin: center center;
+  transition:
+    transform 620ms cubic-bezier(0.22, 1, 0.36, 1),
+    opacity 420ms ease,
+    filter 420ms ease;
+  will-change: transform, opacity;
+}
+
+.coverflow-panel-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--line);
+  background: var(--bg-surface-2);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.coverflow-panel-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
 }
 
-.panel-copy {
-  padding: 0 24px 28px 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.coverflow-panel--active {
+  transform: translate(-50%, -50%) translateZ(0) rotateY(0deg) scale(1);
+  opacity: 1;
+  z-index: 3;
+  cursor: default;
+  filter: none;
 }
 
-.panel-copy h3 {
-  font-size: 1.05rem;
+.coverflow-panel--left {
+  transform: translate(-110%, -50%) translateZ(-220px) rotateY(38deg) scale(0.82);
+  opacity: 0.55;
+  z-index: 1;
+  filter: brightness(0.7);
+}
+
+.coverflow-panel--right {
+  transform: translate(10%, -50%) translateZ(-220px) rotateY(-38deg) scale(0.82);
+  opacity: 0.55;
+  z-index: 1;
+  filter: brightness(0.7);
+}
+
+.coverflow-panel--left:hover,
+.coverflow-panel--right:hover {
+  opacity: 0.8;
+  filter: brightness(0.9);
+}
+
+.coverflow-panel:focus-visible {
+  outline: none;
+}
+
+.coverflow-panel:focus-visible .coverflow-panel-frame {
+  border-color: var(--accent);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45), 0 0 0 2px var(--accent);
+}
+
+.coverflow-caption {
+  margin-top: 24px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  animation: captionFade 360ms ease;
+}
+
+.coverflow-caption h3 {
+  font-size: 1.15rem;
   font-weight: 600;
   color: var(--text);
   letter-spacing: -0.01em;
   margin: 0;
 }
 
-.panel-copy p {
-  font-size: 0.92rem;
+.coverflow-caption p {
+  font-size: 0.95rem;
   line-height: 1.65;
   color: var(--muted-light);
   margin: 0;
+  max-width: 520px;
+}
+
+@keyframes captionFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.coverflow-dots {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.coverflow-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  transition: background 220ms ease, border-color 220ms ease, transform 220ms ease;
+}
+
+.coverflow-dot:hover {
+  border-color: var(--accent);
+}
+
+.coverflow-dot--active {
+  background: var(--accent);
+  border-color: var(--accent);
+  transform: scale(1.15);
 }
 
 @media (max-width: 1024px) {
-  .panel-grid {
-    grid-template-columns: 1fr;
+  .coverflow-stage {
+    height: auto;
+    perspective: none;
+    display: flex;
+    flex-direction: column;
     gap: 24px;
+  }
+
+  .coverflow-panel {
+    position: static;
+    width: 100%;
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+    cursor: default;
+  }
+
+  .coverflow-caption {
+    display: none;
+  }
+
+  .coverflow-dots {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coverflow-panel {
+    transition: opacity 200ms ease;
+  }
+
+  .coverflow-caption {
+    animation: none;
   }
 }
 

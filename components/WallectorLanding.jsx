@@ -1,8 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import Section from "./Section";
-import Lightbox from "./Lightbox";
 import MobileMenu from "./MobileMenu";
 import ScrollReveal from "./ScrollReveal";
 
@@ -57,6 +57,8 @@ const steps = [
 ];
 
 export default function WallectorLanding() {
+  const [activeIndex, setActiveIndex] = useState(1);
+
   return (
     <main className="page-shell">
 
@@ -83,10 +85,6 @@ export default function WallectorLanding() {
           <div className="hero-copy">
             <h1>The art catalog that answers back.</h1>
             <p className="hero-subtext">Marketplace users hate filters. We turned your catalog into a ChatGPT app. They just ask.</p>
-            <div className="hero-actions">
-              <a className="button button-primary" href="#how-it-works">See the features</a>
-              <a className="hero-nav-link" href="#work-with-us">Work with us</a>
-            </div>
           </div>
 
           <div className="hero-visual">
@@ -124,7 +122,7 @@ export default function WallectorLanding() {
 
       {/* TODO: future "Try it" embedded prompt widget goes here */}
 
-      {/* How it works (fused: product overview + how it works) */}
+      {/* How it works (coverflow 3D) */}
       <Section
         id="how-it-works"
         tone="highlight"
@@ -132,27 +130,50 @@ export default function WallectorLanding() {
         title="How it works"
         description="Wallector connects to your catalog and becomes a ChatGPT app. Your users just talk."
       >
-        <div className="panel-grid">
-          {panels.map((panel, idx) => (
-            <ScrollReveal key={panel.title} animation="reveal" delay={idx * 100}>
-              <article className="panel">
-                <Lightbox>
-                  <div className="panel-image-frame">
-                    <Image
-                      src={panel.image}
-                      alt={panel.alt}
-                      width={1056}
-                      height={768}
-                      className="panel-image"
-                    />
-                  </div>
-                </Lightbox>
-                <div className="panel-copy">
-                  <h3>{panel.title}</h3>
-                  <p>{panel.text}</p>
+        <div className="coverflow-stage" role="group" aria-label="Feature showcase">
+          {panels.map((panel, idx) => {
+            const offset = idx - activeIndex;
+            const positionClass =
+              offset === 0 ? "active" : offset < 0 ? "left" : "right";
+            const isActive = offset === 0;
+            return (
+              <button
+                key={panel.title}
+                type="button"
+                className={`coverflow-panel coverflow-panel--${positionClass}`}
+                onClick={() => !isActive && setActiveIndex(idx)}
+                aria-label={isActive ? panel.title : `Show ${panel.title}`}
+                aria-pressed={isActive}
+                tabIndex={isActive ? -1 : 0}
+              >
+                <div className="coverflow-panel-frame">
+                  <Image
+                    src={panel.image}
+                    alt={panel.alt}
+                    width={1056}
+                    height={768}
+                    className="coverflow-panel-image"
+                  />
                 </div>
-              </article>
-            </ScrollReveal>
+              </button>
+            );
+          })}
+        </div>
+        <div className="coverflow-caption" key={activeIndex}>
+          <h3>{panels[activeIndex].title}</h3>
+          <p>{panels[activeIndex].text}</p>
+        </div>
+        <div className="coverflow-dots" role="tablist" aria-label="Choose feature">
+          {panels.map((panel, idx) => (
+            <button
+              key={panel.title}
+              type="button"
+              role="tab"
+              className={`coverflow-dot${idx === activeIndex ? " coverflow-dot--active" : ""}`}
+              onClick={() => setActiveIndex(idx)}
+              aria-label={panel.title}
+              aria-selected={idx === activeIndex}
+            />
           ))}
         </div>
       </Section>
