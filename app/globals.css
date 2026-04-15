@@ -1361,6 +1361,145 @@ h3 {
   }
 }
 
+/* Expanded overlay (click on active panel) */
+
+.coverflow-expanded-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(7, 8, 12, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  cursor: zoom-out;
+  animation: overlayFade 220ms ease;
+}
+
+.coverflow-expanded-content {
+  position: relative;
+  width: min(92vw, 1480px);
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  cursor: default;
+  animation: expandIn 360ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.coverflow-expanded-image {
+  width: 100%;
+  height: auto;
+  max-height: 76vh;
+  object-fit: contain;
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--line);
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.6);
+}
+
+.coverflow-expanded-caption {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  align-items: center;
+  max-width: 640px;
+}
+
+.coverflow-expanded-caption h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin: 0;
+}
+
+.coverflow-expanded-caption p {
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--muted-light);
+  margin: 0;
+}
+
+.coverflow-expanded-close {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid var(--line-strong);
+  background: rgba(7, 8, 12, 0.6);
+  color: var(--text);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+.coverflow-expanded-close:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+@keyframes overlayFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes expandIn {
+  from {
+    opacity: 0;
+    transform: scale(0.86);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 1024px) {
+  .coverflow-expanded-overlay {
+    padding: 24px 16px;
+  }
+
+  .coverflow-expanded-content {
+    width: 100%;
+  }
+
+  .coverflow-expanded-image {
+    max-height: 70vh;
+  }
+
+  .coverflow-expanded-close {
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coverflow-expanded-overlay {
+    animation: none;
+  }
+
+  .coverflow-expanded-content {
+    animation: none;
+  }
+}
+
 /* Steps ("Work with us" section) */
 
 .step-grid {

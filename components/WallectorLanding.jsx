@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Section from "./Section";
 import MobileMenu from "./MobileMenu";
@@ -58,6 +58,26 @@ const steps = [
 
 export default function WallectorLanding() {
   const [activeIndex, setActiveIndex] = useState(1);
+  const [expanded, setExpanded] = useState(false);
+
+  useEffect(() => {
+    if (!expanded) return;
+    const onKey = (e) => { if (e.key === "Escape") setExpanded(false); };
+    document.addEventListener("keydown", onKey);
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = "";
+    };
+  }, [expanded]);
+
+  const handlePanelClick = (idx) => {
+    if (idx === activeIndex) {
+      setExpanded(true);
+    } else {
+      setActiveIndex(idx);
+    }
+  };
 
   return (
     <main className="page-shell">
@@ -141,10 +161,9 @@ export default function WallectorLanding() {
                 key={panel.title}
                 type="button"
                 className={`coverflow-panel coverflow-panel--${positionClass}`}
-                onClick={() => !isActive && setActiveIndex(idx)}
-                aria-label={isActive ? panel.title : `Show ${panel.title}`}
+                onClick={() => handlePanelClick(idx)}
+                aria-label={isActive ? `Expand ${panel.title}` : `Show ${panel.title}`}
                 aria-pressed={isActive}
-                tabIndex={isActive ? -1 : 0}
               >
                 <div className="coverflow-panel-frame">
                   <Image
@@ -159,6 +178,41 @@ export default function WallectorLanding() {
             );
           })}
         </div>
+        {expanded && (
+          <div
+            className="coverflow-expanded-overlay"
+            onClick={() => setExpanded(false)}
+            role="dialog"
+            aria-modal="true"
+            aria-label={panels[activeIndex].title}
+          >
+            <div
+              className="coverflow-expanded-content"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <Image
+                src={panels[activeIndex].image}
+                alt={panels[activeIndex].alt}
+                width={1920}
+                height={1440}
+                className="coverflow-expanded-image"
+                priority
+              />
+              <div className="coverflow-expanded-caption">
+                <h3>{panels[activeIndex].title}</h3>
+                <p>{panels[activeIndex].text}</p>
+              </div>
+            </div>
+            <button
+              type="button"
+              className="coverflow-expanded-close"
+              onClick={() => setExpanded(false)}
+              aria-label="Close"
+            >
+              ×
+            </button>
+          </div>
+        )}
         <div className="coverflow-caption" key={activeIndex}>
           <h3>{panels[activeIndex].title}</h3>
           <p>{panels[activeIndex].text}</p>
