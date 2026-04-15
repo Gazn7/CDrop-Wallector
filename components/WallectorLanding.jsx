@@ -186,18 +186,20 @@ export default function WallectorLanding() {
             aria-modal="true"
             aria-label={panels[activeIndex].title}
           >
-            <div
-              className="coverflow-expanded-content"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <Image
-                src={panels[activeIndex].image}
-                alt={panels[activeIndex].alt}
-                width={1920}
-                height={1440}
-                className="coverflow-expanded-image"
-                priority
-              />
+            <div className="coverflow-expanded-content">
+              <div
+                className="coverflow-expanded-image-wrap"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <Image
+                  src={panels[activeIndex].image}
+                  alt={panels[activeIndex].alt}
+                  width={1920}
+                  height={1440}
+                  className="coverflow-expanded-image"
+                  priority
+                />
+              </div>
               <div className="coverflow-expanded-caption">
                 <h3>{panels[activeIndex].title}</h3>
                 <p>{panels[activeIndex].text}</p>
@@ -206,7 +208,7 @@ export default function WallectorLanding() {
             <button
               type="button"
               className="coverflow-expanded-close"
-              onClick={() => setExpanded(false)}
+              onClick={(e) => { e.stopPropagation(); setExpanded(false); }}
               aria-label="Close"
             >
               ×

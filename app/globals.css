@@ -1395,13 +1395,20 @@ h3 {
   flex-direction: column;
   gap: 20px;
   align-items: center;
-  cursor: default;
+  cursor: zoom-out;
   animation: expandIn 360ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+.coverflow-expanded-image-wrap {
+  display: inline-block;
+  cursor: default;
+  line-height: 0;
+}
+
 .coverflow-expanded-image {
-  width: 100%;
+  width: auto;
   height: auto;
+  max-width: min(92vw, 1480px);
   max-height: 76vh;
   object-fit: contain;
   border-radius: var(--radius-xl);
