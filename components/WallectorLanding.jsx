@@ -137,32 +137,19 @@ export default function WallectorLanding() {
 
       {/* TODO: future "Try it" embedded prompt widget goes here */}
 
-      {/* Wallector case study */}
-      <Section tone="default">
-        <div className="case-study-panel">
-          <ScrollReveal animation="reveal">
-            <div className="case-study-copy">
-              <span className="eyebrow">Case study</span>
-              <h2>See it in action: Wallector</h2>
-              <p>We built Wallector to solve search friction in the fine art market. Try the live ChatGPT app and see how it completely changes the browsing experience.</p>
-              <div className="hero-actions">
-                {/* TODO: replace href with the real public ChatGPT app URL when available */}
-                <a className="button button-primary" href="/try-wallector">
-                  Try Wallector Live <span aria-hidden="true">&rarr;</span>
-                </a>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </Section>
-
-      {/* How it works (coverflow 3D) */}
+      {/* How it works (Wallector case study + coverflow 3D) */}
       <Section
         id="how-it-works"
         tone="highlight"
-        eyebrow="How it works"
-        title="How it works"
-        description="No more filters. Just natural conversation."
+        eyebrow={"How it works \u2014 Wallector case"}
+        title="See it in action: Wallector"
+        description={
+          <>
+            We built Wallector to solve search friction in the fine art market
+            <br />
+            No more filters, just natural conversation
+          </>
+        }
       >
         <div className="coverflow-stage" role="group" aria-label="Feature showcase">
           {panels.map((panel, idx) => {
@@ -253,6 +240,19 @@ export default function WallectorLanding() {
             />
           ))}
         </div>
+
+        <div className="try-wallector-block">
+          <div className="try-wallector-divider" aria-hidden="true" />
+          <div className="try-wallector-row">
+            <p className="try-wallector-text">
+              Try the live ChatGPT app and see how it completely changes the browsing experience.
+            </p>
+            {/* TODO: replace href with the real public ChatGPT app URL when available */}
+            <a className="button button-primary try-wallector-cta" href="/try-wallector">
+              Try Wallector Live <span aria-hidden="true">&rarr;</span>
+            </a>
+          </div>
+        </div>
       </Section>
 
       {/* How we work + Let's talk (fused) */}
@@ -319,7 +319,7 @@ export default function WallectorLanding() {
           </div>
           <div className="site-footer-block">
             <span className="footer-label">Navigation</span>
-            <a href="#how-it-works">How it works</a>
+            <a href="#how-it-works">Wallector case</a>
             <a href="#how-we-work">How we work</a>
           </div>
           <div className="site-footer-block">
