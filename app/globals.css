@@ -107,8 +107,8 @@ h3 {
 }
 
 .site-brand-cd {
-  width: auto;
-  height: 30px;
+  width: 34px;
+  height: 34px;
   opacity: 1;
   flex-shrink: 0;
 }
@@ -1076,8 +1076,8 @@ h3 {
   }
 
   .site-brand-cd {
-    width: auto;
-    height: 20px;
+    width: 24px;
+    height: 24px;
   }
 
   .site-brand-x {
