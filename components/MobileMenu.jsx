@@ -6,7 +6,7 @@ import { createPortal } from "react-dom";
 const links = [
   { label: "Home", href: "#" },
   { label: "How it works", href: "#how-it-works" },
-  { label: "Contact", href: "#contact" },
+  { label: "How we work", href: "#how-we-work" },
 ];
 
 function MenuOverlay({ open, onClose }) {

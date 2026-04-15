@@ -28,13 +28,6 @@ const panels = [
   }
 ];
 
-const proofItems = [
-  { value: "Live", label: "In production on ChatGPT" },
-  { value: "Submitted", label: "OpenAI marketplace review" },
-  { value: "3\u20135 days", label: "Average onboarding" },
-  { value: "~70%", label: "Code reusable across clients" }
-];
-
 const steps = [
   {
     number: "01",
@@ -127,18 +120,6 @@ export default function WallectorLanding() {
           </div>
         </div>
       </Section>
-
-      {/* Proof bar */}
-      <div className="proof-bar">
-        <div className="proof-bar-inner">
-          {proofItems.map((item) => (
-            <div key={item.value} className="proof-chip">
-              <span className="proof-chip-value">{item.value}</span>
-              <span className="proof-chip-label">{item.label}</span>
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* TODO: future "Try it" embedded prompt widget goes here */}
 
@@ -236,7 +217,7 @@ export default function WallectorLanding() {
 
       {/* How we work + Let's talk (fused) */}
       <Section
-        id="contact"
+        id="how-we-work"
         tone="dark"
         eyebrow="How we work"
         title="From zero to live in 4 weeks"
@@ -260,13 +241,10 @@ export default function WallectorLanding() {
           <ScrollReveal animation="reveal">
             <div className="closing-copy">
               <h2>Let&rsquo;s talk</h2>
-              <p>Run a marketplace? Let&rsquo;s see if this fits yours. 30 minutes, no deck.</p>
+              <p>Run a marketplace? Let&rsquo;s see if this fits yours.</p>
               <div className="hero-actions">
                 <a className="button button-primary" href="mailto:info@criticaldrop.com?subject=Wallector%20for%20our%20marketplace">
-                  Book a 30-min call
-                </a>
-                <a className="hero-nav-link" href="mailto:info@criticaldrop.com">
-                  info@criticaldrop.com
+                  Contact us
                 </a>
               </div>
             </div>
@@ -283,7 +261,7 @@ export default function WallectorLanding() {
           <div className="site-footer-block">
             <span className="footer-label">Navigation</span>
             <a href="#how-it-works">How it works</a>
-            <a href="#contact">Contact</a>
+            <a href="#how-we-work">How we work</a>
           </div>
           <div className="site-footer-block">
             <span className="footer-label">Contacts</span>
