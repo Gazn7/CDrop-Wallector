@@ -146,9 +146,16 @@ export default function WallectorLanding() {
       >
         <div className="coverflow-stage" role="group" aria-label="Feature showcase">
           {panels.map((panel, idx) => {
-            const offset = idx - activeIndex;
+            const total = panels.length;
+            const offset = (idx - activeIndex + total) % total;
             const positionClass =
-              offset === 0 ? "active" : offset < 0 ? "left" : "right";
+              offset === 0
+                ? "active"
+                : offset === 1
+                  ? "right"
+                  : offset === total - 1
+                    ? "left"
+                    : "hidden";
             const isActive = offset === 0;
             return (
               <button
