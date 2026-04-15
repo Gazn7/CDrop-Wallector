@@ -52,6 +52,11 @@ const steps = [
 export default function WallectorLanding() {
   const [activeIndex, setActiveIndex] = useState(1);
   const [expanded, setExpanded] = useState(false);
+  const [flippedSteps, setFlippedSteps] = useState([false, false, false]);
+
+  const toggleStep = (idx) => {
+    setFlippedSteps((prev) => prev.map((v, i) => (i === idx ? !v : v)));
+  };
 
   useEffect(() => {
     if (!expanded) return;
@@ -232,17 +237,36 @@ export default function WallectorLanding() {
         description="Three steps. One codebase. Your marketplace gets a ChatGPT app."
       >
         <div className="step-grid">
-          {steps.map((step, idx) => (
-            <ScrollReveal key={step.number} animation="reveal" delay={idx * 100}>
-              <article className="step-card">
-                <span className="step-number">{step.number}</span>
-                <div className="step-copy">
-                  <h3>{step.title} <span className="step-time">{step.time}</span></h3>
-                  <p>{step.text}</p>
-                </div>
-              </article>
-            </ScrollReveal>
-          ))}
+          <span className="step-line" aria-hidden="true" />
+          {steps.map((step, idx) => {
+            const isFlipped = flippedSteps[idx];
+            return (
+              <ScrollReveal key={step.number} animation="reveal" delay={idx * 100}>
+                <button
+                  type="button"
+                  className={`step-card${isFlipped ? " step-card--flipped" : ""}`}
+                  onClick={() => toggleStep(idx)}
+                  aria-pressed={isFlipped}
+                  aria-label={`${step.number} ${step.title}, ${step.time}`}
+                >
+                  <div className="step-card-inner">
+                    <div className="step-card-face step-card-face--front">
+                      <span className="step-front-number">{step.number}</span>
+                      <span className="step-front-title">{step.title}</span>
+                      <span className="step-front-time">{step.time}</span>
+                    </div>
+                    <div className="step-card-face step-card-face--back">
+                      <span className="step-number">{step.number}</span>
+                      <div className="step-copy">
+                        <h3>{step.title} <span className="step-time">{step.time}</span></h3>
+                        <p>{step.text}</p>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+              </ScrollReveal>
+            );
+          })}
         </div>
 
         <div className="closing-panel closing-panel--after-steps">
