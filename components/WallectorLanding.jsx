@@ -286,7 +286,13 @@ export default function WallectorLanding() {
         id="how-we-work"
         tone="dark"
         eyebrow="How we work"
-        title="From zero to live in weeks, not months"
+        title={
+          <>
+            From zero to live in weeks,
+            <br />
+            not months
+          </>
+        }
         description="Three steps. One codebase. Your marketplace gets a ChatGPT app."
       >
         <div className="step-grid">
