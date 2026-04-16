@@ -34,8 +34,8 @@ const steps = [
     title: "Discovery",
     time: "Week 1",
     lines: [
-      "We start by looking at your catalog and listening to your goals",
-      "We outline a clear plan to build the AI seamlessly around your specific needs"
+      "We dive into your catalog and business goals.",
+      "We map out the best AI integration for your users."
     ]
   },
   {
