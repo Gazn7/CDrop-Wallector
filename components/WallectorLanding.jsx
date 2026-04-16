@@ -32,16 +32,16 @@ const steps = [
   {
     number: "01",
     title: "Discovery",
-    time: "1 week",
+    time: "Week 1",
     lines: [
-      "We dive into your inventory data",
-      "We outline a clear plan to integrate the AI seamlessly"
+      "We start by looking at your catalog and listening to your goals",
+      "We outline a clear plan to build the AI seamlessly around your specific needs"
     ]
   },
   {
     number: "02",
     title: "Build",
-    time: "2\u20133 weeks",
+    time: "Week 2\u20133",
     lines: [
       "We do the heavy lifting, mapping your specific data to our AI core",
       "The final app is 100% your brand"
@@ -50,7 +50,7 @@ const steps = [
   {
     number: "03",
     title: "Launch",
-    time: "1 week",
+    time: "Week 4",
     lines: [
       "We publish the app on the marketplace and set up the hosting",
       "You get a ready-to-use solution"
@@ -286,7 +286,7 @@ export default function WallectorLanding() {
         id="how-we-work"
         tone="dark"
         eyebrow="How we work"
-        title="From zero to live in 4 weeks"
+        title="From zero to live in weeks, not months"
         description="Three steps. One codebase. Your marketplace gets a ChatGPT app."
       >
         <div className="step-grid">
