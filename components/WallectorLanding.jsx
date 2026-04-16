@@ -293,7 +293,6 @@ export default function WallectorLanding() {
             not months
           </>
         }
-        description="Three steps. One codebase. Your marketplace gets a ChatGPT app."
       >
         <div className="step-grid">
           <span className="step-line" aria-hidden="true" />
