@@ -22,7 +22,7 @@ function Bubble({ children, who }) {
   return <div className={`bubble ${who}`}>{children}</div>;
 }
 
-const TYPING_MS = 320;
+const API_TIMEOUT_MS = 4500;
 
 export default function MiniChat({ compact = false, suggestions, placeholder }) {
   const initialBot = compact
@@ -46,10 +46,26 @@ export default function MiniChat({ compact = false, suggestions, placeholder }) 
     setBusy(true);
 
     const items = localSearch(q, history);
-    const reply = localLead(q);
+    let reply = localLead(q);
 
-    // Phase 1: brief artificial delay so the typing indicator reads as natural
-    await new Promise((r) => setTimeout(r, TYPING_MS));
+    try {
+      const timeout = new Promise((_, reject) =>
+        setTimeout(() => reject(new Error("timeout")), API_TIMEOUT_MS)
+      );
+      const fetchCall = fetch("/api/chat", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ query: q, items, history: [], isHelp: false }),
+      }).then((res) => {
+        if (!res.ok) throw new Error(`http_${res.status}`);
+        return res.json();
+      });
+
+      const data = await Promise.race([fetchCall, timeout]);
+      if (data.reply) reply = data.reply;
+    } catch {
+      // fallback: localLead reply already set above
+    }
 
     setMessages((prev) => [...prev, { who: "bot", text: reply, items }]);
     setBusy(false);
