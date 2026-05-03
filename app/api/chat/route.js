@@ -1,8 +1,6 @@
 import OpenAI from "openai";
 import { NextResponse } from "next/server";
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
-
 // In-memory rate limit: best-effort (resets across Vercel function invocations)
 const rateLimitMap = new Map();
 const RATE_LIMIT = 10;
@@ -63,6 +61,7 @@ export async function POST(req) {
   const prompt = buildPrompt(query, items, detectedHelp);
 
   try {
+    const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
     const completion = await openai.chat.completions.create({
       model: "gpt-4o-mini",
       messages: [{ role: "user", content: prompt }],
