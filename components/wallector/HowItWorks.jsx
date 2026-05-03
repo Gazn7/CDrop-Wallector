@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Reveal from "./Reveal";
 
 const PANELS = [
@@ -58,9 +58,22 @@ const SPEC_CELLS = [
 function Coverflow() {
   const [active, setActive] = useState(1);
   const total = PANELS.length;
+  const touchX = useRef(null);
+
+  function onTouchStart(e) {
+    touchX.current = e.touches[0].clientX;
+  }
+  function onTouchEnd(e) {
+    if (touchX.current === null) return;
+    const delta = e.changedTouches[0].clientX - touchX.current;
+    touchX.current = null;
+    if (delta < -40) setActive((a) => (a + 1) % total);
+    else if (delta > 40) setActive((a) => (a - 1 + total) % total);
+  }
+
   return (
     <>
-      <div className="cf-stage">
+      <div className="cf-stage" onTouchStart={onTouchStart} onTouchEnd={onTouchEnd}>
         {PANELS.map((p, idx) => {
           const offset = (idx - active + total) % total;
           const cls =
