@@ -8,7 +8,7 @@ export default function Hero() {
         <div>
           <span className="eyebrow">A service by CriticalDrop</span>
           <h1>
-            Turn your marketplace<br />into a <em>ChatGPT app</em>
+            Turn your marketplace into a <em>ChatGPT app</em>
           </h1>
           <p className="hero-sub">
             Your customers hate clicking through 14 filters. So skip them.
