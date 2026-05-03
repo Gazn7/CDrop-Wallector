@@ -1,6 +1,5 @@
 import Header from "./wallector/Header";
 import Hero from "./wallector/Hero";
-import ProofBar from "./wallector/ProofBar";
 import HowItWorks from "./wallector/HowItWorks";
 import TryItLive from "./wallector/TryItLive";
 import Timeline from "./wallector/Timeline";
@@ -13,7 +12,6 @@ export default function WallectorLanding() {
     <main className="shell">
       <Header />
       <Hero />
-      <ProofBar />
       <HowItWorks />
       <TryItLive />
       <Timeline />

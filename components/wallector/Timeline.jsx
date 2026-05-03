@@ -74,7 +74,7 @@ export default function Timeline() {
             <div className="s-head">
               <span className="eyebrow">How we work</span>
               <h2>
-                From zero to live in <em>4 weeks</em>,<br />not 4 quarters.
+                From zero to live in <em>4 weeks</em>,<br />not 4 quarters
               </h2>
             </div>
             <p style={{ color: "var(--muted-1)", fontSize: "1rem", lineHeight: 1.7, maxWidth: 380 }}>

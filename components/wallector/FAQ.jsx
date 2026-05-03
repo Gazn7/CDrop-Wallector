@@ -61,7 +61,7 @@ export default function FAQ() {
           <Reveal>
             <div className="s-head" style={{ marginBottom: 0 }}>
               <span className="eyebrow">FAQ</span>
-              <h2>The questions everyone asks.</h2>
+              <h2>The questions everyone asks</h2>
               <p>If yours isn&rsquo;t here, write us. We answer within a day.</p>
             </div>
           </Reveal>
